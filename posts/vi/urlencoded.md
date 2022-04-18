@@ -6,7 +6,7 @@ next_title: 'Ghi chú'
 next_link: '/vi/docs/notes'
 ---
 
-Theo mặc định, axios tuần tự hóa đối tượng Javascript thành `JSON`. Thay vào đó, để gửi dữ liệu theo định dạng `application/x-www-form-urlencoded`, bạn có thể sử dụng một trong các lựa chọn sau đây.
+By default, axios serializes JavaScript objects to `JSON`. To send data in the `application/x-www-form-urlencoded` format instead, you can use one of the following options.
 
 ### Trình duyệt
 
@@ -18,6 +18,7 @@ params.append('tham-số-1', 'giá-trị-1');
 params.append('tham-số-2', 'giá-trị-2');
 axios.post('/foo', params);
 ```
+
 > Lưu ý rằng không phải trình duyệt nào cũng hỗ trợ `URLSearchParams` (xem [caniuse.com](http://www.caniuse.com/#feat=urlsearchparams)), nhưng có một [polyfill](https://github.com/WebReflection/url-search-params) sẵn dùng đây (hãy đảm bảo là polyfill cho môi trường toàn cục)
 
 Hoặc là bạn có thể biên mã dữ liệu bằng thư viện [`qs`](https://github.com/ljharb/qs):
@@ -62,6 +63,7 @@ axios.post('http://cái-gì-đó.com/', params.toString());
 
 Bạn còn có thể sử dụng thư viện [`qs`](https://github.com/ljharb/qs).
 
+###### NOTE
 **LƯU Ý:** Nếu bạn cần string-hóa các đối tượng lồng nhau thì tốt nhất hãy dùng thư viện `qs`, vì phương thức `querystring` có vấn đề đã ghi nhận đối với use case đó (https://github.com/nodejs/node-v0.x-archive/issues/1665).
 
 #### Form data
@@ -70,7 +72,7 @@ Trong node.js, bạn có thể sử dụng thư viện [`form-data`](https://git
 
 ```js
 const FormData = require('form-data');
- 
+
 const form = new FormData();
 form.append('field_của_tôi', 'giá trị của tôi');
 form.append('buffer_của_tôi', new Buffer(10));
