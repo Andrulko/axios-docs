@@ -18,7 +18,7 @@ axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 ```
 
-### Користувацький екземпляр за замовчуванням 
+### Користувацький екземпляр за замовчуванням
 
 ```js
 // Встановіть налаштування за замовчуванням під час створення екземпляра
@@ -32,7 +32,7 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 ### Налаштуйте порядок пріоритету
 
-Config буде об'єднано з порядком пріоритету. Порядок - це стандартні налаштування бібліотеки, знайдені в [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), потім властивість `defaults` екземпляра і, нарешті, аргумент` config` для запиту. Останні мають пріоритет над першими. Ось приклад.
+Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
 
 ```js
 // Створіть екземпляр, використовуючи стандартні налаштування, надані бібліотекою
