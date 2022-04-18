@@ -32,7 +32,7 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 ### Thứ tự ưu tiên của cấu hình
 
-Cấu hình sẽ được hợp lại theo thứ tự ưu tiên. Thứ tự lần lượt là mặc định của thư viện được đặt trong [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), tiếp đến là thuộc tính `defaults` của instance, rồi cuối cùng là đối số `config` cho request. Cái đi sau sẽ được ưu tiên hơn cái đi trước. Sau đây là một ví dụ.
+Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
 
 ```js
 // Tạo ra một instance dùng cấu hình mặc định do thư viện cung cấp
