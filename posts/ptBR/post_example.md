@@ -31,9 +31,7 @@ function getUserAccount() {
 
 function getUserPermissions() {
   return axios.get('/user/1963/permissions');
-}
-
-Promise.all([getUserAccount(), getUserPermissions()])
+} Promise.all([getUserAccount(), getUserPermissions()])
   .then(function (results) {
     const acct = results[0];
     const perm = results[1];
