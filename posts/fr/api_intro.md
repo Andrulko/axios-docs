@@ -12,8 +12,7 @@ Les requêtes peuvent être faites en passant la configuration correspondante à
 ##### axios(config)
 
 ```js
-// Envoi d’une requête POST.
-axios({
+// Envoi d’une requête POST. axios({
   method: 'post',
   url: '/user/12345',
   data: {
@@ -24,8 +23,7 @@ axios({
 ```
 
 ```js
-// Requête GET pour une image distante avec node.js.
-axios({
+// Requête GET pour une image distante avec node.js. axios({
   method: 'get',
   url: 'http://bit.ly/2mTM3nY',
   responseType: 'stream'
@@ -38,8 +36,7 @@ axios({
 ##### axios(url[, config])
 
 ```js
-// Envoyer une requête GET (c’est la méthode par défaut).
-axios('/user/12345');
+// Envoyer une requête GET (c’est la méthode par défaut). axios('/user/12345');
 ```
 
 ### Alias des méthodes de requête
@@ -55,4 +52,5 @@ Pour plus de simplicité, des alias correspondant à toutes les méthodes suppor
 ##### axios.put(url[, data[, config]])
 ##### axios.patch(url[, data[, config]])
 
-> **Note :** lorsque vous utilisez des alias de méthodes, les champs `url`, `method` et `data` n’ont pas besoin d’être spécifiés dans la configuration.
+###### NOTE
+**Note :** lorsque vous utilisez des alias de méthodes, les champs `url`, `method` et `data` n’ont pas besoin d’être spécifiés dans la configuration.
