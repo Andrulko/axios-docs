@@ -1,10 +1,11 @@
 ---
-title: "Configurações de requisição"
-prev_title: "Instância Axios"
-prev_link: "/ptBR/docs/instance"
-next_title: "Esquema de Resposta"
-next_link: "/ptBR/docs/res_schema"
+title: 'Configurações de requisição'
+prev_title: 'Instância Axios'
+prev_link: '/ptBR/docs/instance'
+next_title: 'Esquema de Resposta'
+next_link: '/ptBR/docs/res_schema'
 ---
+
 
 Estas são as configurações opcionais disponíveis para fazer uma requisição. Apenas a `url` é obrigatória. Requisições serão setadas como padrão para `GET` se nenhum `method` for especificado.
 
@@ -38,7 +39,28 @@ Estas são as configurações opcionais disponíveis para fazer uma requisição
   }],
 
   // `headers` são cabeçalhos customizáveis para serem enviados
+  headers: {'X-Requested-With':
+  transformRequest: [function (data, headers) {
+    // Do whatever you want to transform the data
+
+    return data;
+  }],
+
+  // `transformResponse` allows changes to the response data to be made before
+  // it is passed to then/catch
+  transformResponse: [function (data) {
+    // Do whatever you want to transform the data
+
+    return data;
+  }],
+
+  // `headers` are custom headers to be sent
   headers: {'X-Requested-With': 'XMLHttpRequest'},
+
+  // `params` are the URL parameters to be sent with the request
+  // Must be a plain object or a URLSearchParams object
+  // NOTE: params that are null or undefined are not rendered in the URL.
+  'XMLHttpRequest'},
 
   // `params` são os parametros da URL para serem enviados junto com a requisição
   // Deve sempre ser um objeto ou um objeto de URLSearchParams
@@ -84,6 +106,8 @@ Estas são as configurações opcionais disponíveis para fazer uma requisição
   // `auth` indica que a autenticação básica do HTTP deve ser usada e fornece as credenciais.
   // Isso vai definir um novo cabeçalho de `Authorization`, sobrescrevendo uma já existente
   // `Authorization` cabeçalhos personalizados que você definiu usando `headers`.
+  // Please note that only HTTP Basic auth is configurable through this parameter.
+  // For Bearer tokens and such, use `Authorization` custom headers instead.
   // Por favor, note que apenas autenticação HTTP Basic é configuravel por meio deste parâmetro
   // Para tokens Bearer e outros, use o cabeçalho personalizado de `Authorization`
   auth: {
@@ -129,6 +153,12 @@ Estas são as configurações opcionais disponíveis para fazer uma requisição
   // ou `undefined`), a promessa será resolvida; caso contrário, a promessa será
   // rejeitada.
   validateStatus: function (status) {
+    return status >= 200 && status < 300; // default
+  },
+
+  // `maxRedirects` defines the maximum number of redirects to follow in node.js.
+  // If set to 0, no redirects will be followed.
+  validateStatus: function (status) {
     return status >= 200 && status < 300; // padrão
   },
 
@@ -145,8 +175,8 @@ Estas são as configurações opcionais disponíveis para fazer uma requisição
   // `httpAgent` e `httpsAgent` define um agente personalizado para ser usando quando performando uma requisições http
   // ou https, no node.js. Isso permite opções a serem adicionadas como
   // `keepAlive` que não está habilidado por padrão.
-  httpAgent: new http.Agent({ keepAlive: true }),
-  httpsAgent: new https.Agent({ keepAlive: true }),
+  httpAgent: new http. Agent({ keepAlive: true }),
+  httpsAgent: new https. Agent({ keepAlive: true }),
 
   // `proxy` define o nome do host, a porta e o protocolo do proxy do servidor.
   // Você pode defirnir também seu próprio proxy usando `http_proxy` e
@@ -158,9 +188,7 @@ Estas são as configurações opcionais disponíveis para fazer uma requisição
   // fornecer credenciais.
   // Isso definirá um cabeçalho `Proxy-Authorization`, sobrescrevendo qualquer outro
   // `Proxy-Authorization` existente que você definiu usando `headres`.
-  // Se o proxy do servidor utilizar HTTPS, então você deve definir o protocolo para `https`.
-
-
+  // Se o proxy do servidor utilizar HTTPS, então você deve definir o protocolo para `https`. 
   proxy: {
     protocol: 'https',
     host: '127.0.0.1',
