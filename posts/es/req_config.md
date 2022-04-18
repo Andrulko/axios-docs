@@ -18,6 +18,8 @@ Estas son las opciones de configuración disponibles para hacer peticiones. Solo
   method: 'get', // defecto
 
   // `baseURL` será precedido a `url` a no ser que `url` sea absoluto.
+  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs
+  // to methods of that instance.
   // Es conveniente establecer un `baseURL` en una instancia de axios para pasar URLs relativas
   // a los métodos de esta
   baseURL: 'https://some-domain.com/api',
@@ -66,7 +68,7 @@ Estas son las opciones de configuración disponibles para hacer peticiones. Solo
   data: {
     firstName: 'Fred'
   },
-  
+
   // sintaxis alternativa para enviar data al cuerpo
   // del método post
   // solo el valor es enviando, no la llave
@@ -100,7 +102,7 @@ Estas son las opciones de configuración disponibles para hacer peticiones. Solo
   // las opciones son: 'arraybuffer', 'document', 'json', 'text', 'stream'
   // solo en el navegador: 'blob'
   responseType: 'json', // defecto
-  
+
   // `responseEncoding` indica la codificación a usar para decodificar las respuestas (solo en Node.js)
   // Nota: Ignorado para `responseType` de 'stream' o peticiones del lado del cliente
   responseEncoding: 'utf8', // defecto
@@ -150,8 +152,8 @@ Estas son las opciones de configuración disponibles para hacer peticiones. Solo
   // `httpAgent` y `httpsAgent` definen un agente personalizado a ser usado al realizar una petición
   // http y https, respectivamente, en node.js. Esto permite añadir opciones como
   // `keepAlive` que no estan habilitadas por defecto.
-  httpAgent: new http.Agent({ keepAlive: true }),
-  httpsAgent: new https.Agent({ keepAlive: true }),
+  httpAgent: new http. Agent({ keepAlive: true }),
+  httpsAgent: new https. Agent({ keepAlive: true }),
 
   // `proxy` define hostname, puerto, y protocolo del servidor proxy.
   // También puedes definir tu proxy usando las variables de entorno convencionales 
