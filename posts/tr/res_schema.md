@@ -22,6 +22,11 @@ Bir isteğin yanıtı aşağıdaki bilgileri içerir.
   // `headers` sunucunun yanıt verdiği HTTP üstbilgileri (headerlar)
   // Tüm başlık adları (header isimleri) küçük harfle yazılmıştır ve
   // parantez gösterimi kullanılarak erişilebilir.
+  // (HTTP/2 RFC: https://www.rfc-editor.org/rfc/rfc7540#section-8.1.2.4)
+  statusText: 'OK',
+
+  // `headers` the HTTP headers that the server responded with
+  // All header names are lower cased and can be accessed using the bracket notation.
   // Örneğin: `response.headers['content-type']`
   headers: {},
 
