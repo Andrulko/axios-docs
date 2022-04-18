@@ -2,25 +2,24 @@
 title: 'ترجمه مستندات'
 ---
 
-برای اینکه Axios برای بیشتر افراد در دسترس باشد، مهم است که این اسناد به همه زبانها قابل خوانده شود.
-ما همیشه از کسانی که می خواهند در ترجمه اسناد کمک کنند، قدردانی می کنیم. این راهنما دستورالعمل هایی برای افزودن ترجمه به این اسناد ارائه می دهد.
+To make Axios accessible to as many people as possible, it is important that these docs can be read in all languages. We always appreciate anyone who wants to help translate the documentation. This guide provides instructions for adding a translation to this documentation.
 
 ## ساختار
 
-هر ترجمه از یک فایل پیکربندی تشکیل شده است, `{اختصار-زبان}.lang.js` (برای مثال, `en.lang.js` or `fa.lang.js`) و فایل اسناد ترجمه شده در `posts/{اختصار-زبان}/*.md` می باشد (برای مثال `posts/en` or `posts/fa`). `{اختصار-زبان}` باید با کد دو حرفی زبان [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) جای گزین شود.
+Every translation is composed of a configuration file, `{language-shortcut}.lang.js` (for example, `en.lang.js` or `de.lang.js`) and the translated documentation files in `posts/{language-shortcut}/*.md` (for example `posts/en` or `posts/de`). `{language-shortcut}` should be replaced with your language's [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letter code.
 
 ## پیکربندی زبان شما
 
  - از فایل `en.lang.js` کپی بگیرین.
  - آن را به `{اختصار-زبان}.lang.js` تغییر نام دهید.
- - `display` را با نام زبانتان جاگزین کنید. برای مثال، اگر شما در حال ترجمه فارسی هستید, کلمه “فارسی” را در ازای “Persian” جایگزین کنید.
+ - Replace `display` with the name of your language, in your language. For example, if you're translating german, place “Deutsch” instead of “German”.
  - پیشوند را با `/{اختصار-زبان}/` جایگزین کنید.
  - مقادیر درون فیلدهای `p` و `t` را ترجمع کنید.
- - تمام ویژگی هایی که با برچسب `text` هستند را ترجمع کنید. **نکته:** از آخرین نسخه تهیه شده این مستند، لینکهای در نوار سایدبار نیازی به بروزرسانی ندارند.
+ - Translate all the properties labeled `text` in the sidebar. **Note:** Since the latest version of this documentation, links in the sidebar no longer need to be updated.
 
 ### ثبت پیکربندی زبان
 
-پس از اتمام پیکربندی زبان و ترجمه عبارات موجود در فایل پیکربندی، باید آن را در تنظیمات اصلی ثبت کنید. برای انجام این کار، فایل `inert.config.js` را باز کنید و خط زیر را در بالای آن اضافه کنید:
+Once you've finished configuring your language and translating the phrases and links in the configuration file, you'll need to register it in the root configuration. To do this, open `inert.config.js` and add the following line near the top:
 
 ```js
 const {اختصار-زبان}Config = require('./{اختصار-زبان}.config.js');
@@ -28,20 +27,20 @@ const {اختصار-زبان}Config = require('./{اختصار-زبان}.config.
 
 البته به یاد داشته باشید که `{اختصار-زبان}` را با کد دو حرفی استاندارد [ISO 369-1](https://en.wikipedia.org/wiki/ISO_639-1) جایگزین کنید (همچنین در نام متغیرها!).
 
-اکنون، به دنبال متغیر ثابت `langs` باشید. اگر این متغیر ثابت در بالای عبارت `require` شما قرار دارد ، عبارت `require` خود را به بالای آن منتقل کنید. به لیست `langs` ، شیء زیر را اضافه کنید:  
+Now, look for the `langs` constant. If this constant is located above your `require` statement, move your `require` statement above it. To the `langs` list, add the following object:
 
 ```js
 const langs = [
   ...
   {
-    name: 'اسمی منحصربه فرد که نمایانگر زبان شماست، برای مثال "English" یا "فارسی"',
-    prefix: "همان پیشوندی که در فایل تنظیمات تعریف کردید",
-    config: {اختصار-زبان}Config // متغیر تنظیماتی که قبلا تعریف کردید
+    name: 'Some name that uniquely identifies your language, for example "English" or "German"',
+    prefix: "The same prefix as in the configuration file",
+    config: {language-shortcut}Config // The configuration object you imported earlier
   }
   ...
 ];
 ```
 
-اکنون می توانید ترجمه فایل ها را شروع کنید. پوشه `posts/en` را در یک پوشه `posts/{اختصار-زبان}` کپی کرده و همه فایلها را ترجمه کنید (البته نام فایلها را ترجمه نکنید). 
+Now, you can begin translating the files. Copy the folder `posts/en` into a new folder `posts/{language-shortcut}` and translate all the files (don't translate the filenames, of course).
 
 اگر با مشکلی روبرو شدید، مشکل خود را در [طرح مشکل](https://github.com/axios/axios-docs/issues/new/choose) مطرح کنید.
