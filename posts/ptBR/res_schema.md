@@ -1,9 +1,9 @@
 ---
-title: "Esquema de resposta"
-prev_title: "Configurações de requisição"
-prev_link: "/ptBR/docs/req_config"
-next_title: "Configurações padrões"
-next_link: "/ptBR/docs/config_defaults"
+title: 'Esquema de resposta'
+prev_title: 'Configurações de requisição'
+prev_link: '/ptBR/docs/req_config'
+next_title: 'Configurações padrões'
+next_link: '/ptBR/docs/config_defaults'
 ---
 
 A resposta para uma requisição contêm as seguintes informações.
@@ -17,7 +17,8 @@ A resposta para uma requisição contêm as seguintes informações.
   status: 200,
 
   // `statusText` is the HTTP status message from the server response
-  statusText: 'OK',
+  statusText:
+  'OK',
 
   // `headers` os cabeçalhos HTTP com os quais o servidor respondeu
   // Todos os nomes de cabeçalho estão em letras minúsculas e podem ser acessados ​​usando a notação de colchetes.
