@@ -7,153 +7,163 @@ next_link: '/docs/res_schema'
 ---
 
 
-موارد زیر گزینه های پیکربندی موجود برای ایجاد درخواست هستند. فقط `url` اجباری است. اگر `method` مشخص نشده باشد، درخواست ها به طور پیش فرض از نوع `GET` قرار می گیرند.
+These are the available config options for making requests. Only the `url` is required. Requests will default to `GET` if `method` is not specified.
 
 ```js
 {
-  // `url` آدرس سروری است که برای درخواست استفاده می شود 
+  // `url` is the server URL that will be used for the request
   url: '/user',
 
-  // `method` نوع درخواست است که هنگام ایجاد درخواست استفاده می شود 
+  // `method` is the request method to be used when making the request
   method: 'get', // default
 
-  // `baseURL` به `url` اضافه می شود مگر اینکه `url` یک آدرس مطلق باشد. 
-  // می توان به راحتی `baseURL` را برای نمونه ای از axios تنظیم کرد تا آدرس های نسبی را به روش های آن نمونه منتقل کند.
+  // `baseURL` will be prepended to `url` unless `url` is absolute.
+  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs
+  // to methods of that instance.
   baseURL: 'https://some-domain.com/api',
 
-  // `transformRequest` اجازه می دهد تا داده های درخواست قبل از ارسال به سرور تغییر کند
-  // این فقط برای درخواستهایی از نوع 'PUT', 'POST', 'PATCH' و 'DELETE' می باشد
-  // آخرین تابع در آرایه باید یک رشته یا نمونه ای از Buffer, ArrayBuffer, FormData یا Stream باشد
-  // می توانید شی هدر را تغییر دهید.
+  // `transformRequest` allows changes to the request data before it is sent to the server
+  // This is only applicable for request methods 'PUT', 'POST', 'PATCH' and 'DELETE'
+  // The last function in the array must return a string or an instance of Buffer, ArrayBuffer,
+  // FormData or Stream
+  // You may modify the headers object.
   transformRequest: [function (data, headers) {
-    // در اینجا برای تبدیل داده ها هر کاری می خواهید انجام دهید
+    // Do whatever you want to transform the data
 
     return data;
   }],
 
-  // اجازه می دهد تا تغییرات داده های پاسخ قبل از ارسال به then/catch انجام شود
+  // `transformResponse` allows changes to the response data to be made before
+  // it is passed to then/catch
   transformResponse: [function (data) {
-    // در اینجا برای تبدیل داده ها هر کاری می خواهید انجام دهید
+    // Do whatever you want to transform the data
 
     return data;
   }],
 
-  // `headers` داده های هدر سفارشی هستند که باید ارسال شوند 
+  // `headers` are custom headers to be sent
   headers: {'X-Requested-With': 'XMLHttpRequest'},
 
-  // `params` پارامترهای URL هستند که با درخواست ارسال می شوند 
-  // باید یک شیء ساده یا یک شیء URLSearchParams باشد 
-  // نکته: پارامترهای خالی یا تعریف نشده در URL ارائه نمی شوند. 
+  // `params` are the URL parameters to be sent with the request
+  // Must be a plain object or a URLSearchParams object
+  // NOTE: params that are null or undefined are not rendered in the URL.
   params: {
     ID: 12345
   },
 
-  // `paramsSerializer` یک عملکرد اختیاری است که وظیفه سریال سازی `params` را بر عهده دارد 
-  // (به عنوان مثال، https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)
+  // `paramsSerializer` is an optional function in charge of serializing `params`
+  // (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)
   paramsSerializer: function (params) {
     return Qs.stringify(params, {arrayFormat: 'brackets'})
   },
 
-  // `data` داده ای است که به عنوان بدنه درخواست ارسال می شود 
-  // این فقط برای درخواستهایی از نوع 'PUT', 'POST', 'DELETE , و 'PATCH'  می باشد
-  // وقتی هیچ `transformRequest` تنظیم نشده باشد ، باید یکی از انواع زیر باشد:
+  // `data` is the data to be sent as the request body
+  // Only applicable for request methods 'PUT', 'POST', 'DELETE', and 'PATCH'
+  // When no `transformRequest` is set, must be of one of the following types:
   // - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams
-  // - فقط مرورگر: FormData, File, Blob
-  // - فقط سمت سرور: Stream, Buffer
+  // - Browser only: FormData, File, Blob
+  // - Node only: Stream, Buffer
   data: {
     firstName: 'Fred'
   },
-  
-  // جایگزین نحوه ارسال داده ها به بدنه درخواست
-  // در نوع درخواست post
-  // فقط مقدار ارسال می شود ، نه کلید
+
+  // syntax alternative to send data into the body
+  // method post
+  // only the value is sent, not the key
   data: 'Country=Brasil&City=Belo Horizonte',
 
-  // `timeout` تعداد میلی ثانیه قبل از به پایان رسیدن زمان درخواست را مشخص می کند.
-  // اگر درخواست بیش از مقدار `timeout` طول بکشد، درخواست لغو می شود. 
-  timeout: 1000, // مقدار پیش فرض `0` است (بدون محدودیت زمان برای پایان درخواست)
+  // `timeout` specifies the number of milliseconds before the request times out.
+  // If the request takes longer than `timeout`, the request will be aborted.
+  timeout: 1000, // default is `0` (no timeout)
 
-  // `withCredentials` نشان می دهد که آیا درخواست های کنترل دسترسی از طریق سایت وجود دارد یا خیر
-  // باید با استفاده از اعتبارنامه انجام شود
-  withCredentials: false, // پیش فرض
+  // `withCredentials` indicates whether or not cross-site Access-Control requests
+  // should be made using credentials
+  withCredentials: false, // default
 
-  // `adapter` امکان مدیریت سفارشی درخواست‌ها را می دهد که تست کردن را آسان‌تر می‌کند.
-  // یک پرامیس (promise) را برگرداند و یک پاسخ معتبر ارائه می دهد (این فایل را ببینید lib/adapters/README.md).
+  // `adapter` allows custom handling of requests which makes testing easier.
+  // Return a promise and supply a valid response (see lib/adapters/README.md).
   adapter: function (config) {
     /* ... */
   },
 
-  // `auth` نشان می دهد که باید از اعتبارنامه پایه HTTP استفاده شود و اعتبارنامه را ارائه می دهد.
-  // با این کار یک هدر یا سربرگ `Authorization` تنظیم می کند و هر موجودی را بازنویسی می کند 
-  // `Authorization` هدرهای سفارشی هستند که با استفاده از`headers` تنظیم کرده اید.
-  // لطفاً توجه داشته باشید که فقط اعتبارنامه پایه HTTP از طریق این پارامتر قابل تنظیم است.
-  // برای توکن های Bearer و موارد دیگر ، به جای آن از هدرهای سفارشی `Authorization` استفاده کنید.
+  // `auth` indicates that HTTP Basic auth should be used, and supplies credentials.
+  // This will set an `Authorization` header, overwriting any existing
+  // `Authorization` custom headers you have set using `headers`.
+  // Please note that only HTTP Basic auth is configurable through this parameter.
+  // For Bearer tokens and such, use `Authorization` custom headers instead.
   auth: {
     username: 'janedoe',
     password: 's00pers3cret'
   },
 
-  // `responseType` نوع داده ای را که سرور با آن پاسخ خواهد داد را نشان می دهد
-  // گزینه ها عبارتند از: 'arraybuffer', 'document', 'json', 'text', 'stream'
-  //   فقط مرورگر: 'blob'
-  responseType: 'json', // پیش فرض
+  // `responseType` indicates the type of data that the server will respond with
+  // options are: 'arraybuffer', 'document', 'json', 'text', 'stream'
+  //   browser only: 'blob'
+  responseType: 'json', // default
 
-  // `responseEncoding` نوع کدگذاری که برای استفاده رمزگشایی پاسخ‌ها استفاده می شود را نشان می‌دهد (فقط در Node.js)
-  // نکته: برای درخواست‌های `responseType` در 'stream' یا درخواست‌های سمت سرویس گیرنده نادیده گرفته می شود
-  responseEncoding: 'utf8', // پیش فرض
+  // `responseEncoding` indicates encoding to use for decoding responses (Node.js only)
+  // Note: Ignored for `responseType` of 'stream' or client-side requests
+  responseEncoding: 'utf8', // default
 
-  // `xsrfCookieName` نام کوکی است که برای استفاده به عنوان مقدار رمز توکن xsrf استفاده می شود.
-  xsrfCookieName: 'XSRF-TOKEN', // پیش فرض
+  // `xsrfCookieName` is the name of the cookie to use as a value for xsrf token
+  xsrfCookieName: 'XSRF-TOKEN', // default
 
-  // `xsrfHeaderName` نام هدر http است که مقدار توکن xsrf در آن قرار دارد.
-  xsrfHeaderName: 'X-XSRF-TOKEN', // پیش فرض
+  // `xsrfHeaderName` is the name of the http header that carries the xsrf token value
+  xsrfHeaderName: 'X-XSRF-TOKEN', // default
 
-  // `onUploadProgress` امکان مدیریت پیشرفت رویدادها را برای آپلودها فراهم می کند
-  // فقط در مرورگر
+  // `onUploadProgress` allows handling of progress events for uploads
+  // browser only
   onUploadProgress: function (progressEvent) {
-    // با این رویداد پیشرفت بومی هر کاری که می خواهید انجام دهید
+    // Do whatever you want with the native progress event
   },
 
-  // `onDownloadProgress` امکان مدیریت رویدادهای پیشرفت دانلودها را فراهم می کند 
-  // فقط در مرورگر
+  // `onDownloadProgress` allows handling of progress events for downloads
+  // browser only
   onDownloadProgress: function (progressEvent) {
-    // با این رویداد پیشرفت بومی هر کاری که می خواهید انجام دهید
+    // Do whatever you want with the native progress event
   },
 
-  // `maxContentLength` حداکثر اندازه محتوای پاسخ http را در بایت های مجاز در node.js تعریف می کند.
+  // `maxContentLength` defines the max size of the http response content in bytes allowed in node.js
   maxContentLength: 2000,
 
-  // `maxBodyLength` (گزینه ای فقط node.js) حداکثر اندازه محتوای درخواست http را در بایت های مجاز تعیین می کند.
+  // `maxBodyLength` (Node only option) defines the max size of the http request content in bytes allowed
   maxBodyLength: 2000,
 
-  // `validateStatus` تعیین می کند که آیا پرامیس مربوط به کد وضعیت HTTP پاسخ داده شده را قبول یا رد کند.
-  // اگر `validateStatus` مقدار `true` را برگرداند (یا روی `null` یا `undefined` تنظیم شده باشد)، پرامیس قبول خواهد شد. در غیر این صورت پرامیس رد می شود
+  // `validateStatus` defines whether to resolve or reject the promise for a given
+  // HTTP response status code. If `validateStatus` returns `true` (or is set to `null`
+  // or `undefined`), the promise will be resolved; otherwise, the promise will be
+  // rejected.
   validateStatus: function (status) {
-    return status >= 200 && status < 300; // پیش فرض
+    return status >= 200 && status < 300; // default
   },
 
-  // `maxRedirects` حداکثر تعداد تغییر مسیرهایی را که باید در node.js دنبال شوند تعریف می کند.
-  // اگر روی 0 تنظیم شود ، هیچ تغییرمسیری دنبال نمی شود.
-  maxRedirects: 5, // پیش فرض
+  // `maxRedirects` defines the maximum number of redirects to follow in node.js.
+  // If set to 0, no redirects will be followed.
+  maxRedirects: 5, // default
 
-  // `socketPath` یک سوکت یونیکس را برای استفاده در node.js تعریف می کند.
-  // به عنوان مثال، '/var/run/docker.sock' برای ارسال درخواست به داکر docker.
-  // فقط `socketPath` یا `proxy` را می توان تعیین کرد.
-  // اگر هر دو مشخص شده باشند، `socketPath` استفاده می شود.
-  socketPath: null, // پیش فرض
+  // `socketPath` defines a UNIX Socket to be used in node.js.
+  // e.g. '/var/run/docker.sock' to send requests to the docker daemon.
+  // Only either `socketPath` or `proxy` can be specified.
+  // If both are specified, `socketPath` is used.
+  socketPath: null, // default
 
-  // `httpAgent` و` httpsAgent` یک عامل سفارشی را تعریف می کنند که هنگام انجام درخواستهای http و https به ترتیب در node.js، 
-  // این اجازه را می دهد تا گزینه هایی مانند `keepAlive` اضافه شوند که به طور پیش فرض فعال نیستند.
+  // `httpAgent` and `httpsAgent` define a custom agent to be used when performing http
+  // and https requests, respectively, in node.js. This allows options to be added like
+  // `keepAlive` that are not enabled by default.
   httpAgent: new http.Agent({ keepAlive: true }),
   httpsAgent: new https.Agent({ keepAlive: true }),
 
-  // `proxy` نام میزبان، پورت و پروتکل سرور پراکسی را تعریف می کند.
-  // همچنین می توانید پروکسی خود را با استفاده از متغیرهای محیط `http_proxy` و`https_proxy` تعریف کنید. 
-  // اگر از متغیرهای محیطی برای پیکربندی پراکسی خود استفاده می‌کنید، می‌توانید متغیر محیطی `no_proxy` را به‌عنوان فهرستی از دامنه‌هایی که نباید پروکسی شوند با کاما تعریف کنید.
-  // از `false` برای غیرفعال کردن پروکسی ها و نادیده گرفتن متغیرهای محیطی استفاده کنید.
-  // `auth` نشان می دهد که اعتبارنامه پایه HTTP باید برای اتصال به پروکسی مورد استفاده قرار گیرد و اعتبارنامه ها را تأمین می کند.
-  // با این کار یک هدر `Proxy-Authorization` تنظیم می شود و هدرهای سفارشی `Proxy-Authorization` که با استفاده از `headers` تنظیم کرده اید را بازنویسی می کند.
-  // اگر سرور پروکسی از HTTPS استفاده می کند ، باید پروتکل را روی `https` تنظیم کنید. 
+  // `proxy` defines the hostname, port, and protocol of the proxy server.
+  // You can also define your proxy using the conventional `http_proxy` and
+  // `https_proxy` environment variables. If you are using environment variables
+  // for your proxy configuration, you can also define a `no_proxy` environment
+  // variable as a comma-separated list of domains that should not be proxied.
+  // Use `false` to disable proxies, ignoring environment variables.
+  // `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and
+  // supplies credentials.
+  // This will set an `Proxy-Authorization` header, overwriting any existing
+  // `Proxy-Authorization` custom headers you have set using `headers`.
+  // If the proxy server uses HTTPS, then you must set the protocol to `https`. 
   proxy: {
     protocol: 'https',
     host: '127.0.0.1',
@@ -164,15 +174,16 @@ next_link: '/docs/res_schema'
     }
   },
 
-  // `cancelToken` یک توکن لغو را مشخص می کند که می تواند برای لغو درخواست استفاده شود
-  // (برای جزئیات بیشتر به بخش لغو درخواستها مراجعه کنید)
+  // `cancelToken` specifies a cancel token that can be used to cancel the request
+  // (see Cancellation section below for details)
   cancelToken: new CancelToken(function (cancel) {
   }),
 
-  // `decompress` نشان می دهد که آیا محتوای بدنه پاسخ باید به طور خودکار از حالت فشرده خارج شود یا خیر.
-  // اگر روی `true` تنظیم شود، هدر 'content-encoding' را از شیء پاسخهای همه پاسخهای فشرده خارج می کند
-  // - فقط در node.js (XHR نمی تواند فشرده سازی را غیرفعال کند)
-  decompress: true // پیش فرض
+  // `decompress` indicates whether or not the response body should be decompressed 
+  // automatically. If set to `true` will also remove the 'content-encoding' header 
+  // from the responses objects of all decompressed responses
+  // - Node only (XHR cannot turn off decompression)
+  decompress: true // default
 
 }
 ```
