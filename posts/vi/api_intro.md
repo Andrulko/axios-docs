@@ -55,4 +55,5 @@ axios('/user/12345');
 ##### axios.put(url[, data[, config]])
 ##### axios.patch(url[, data[, config]])
 
+###### NOTE
 **LƯU Ý:** Khi sử dụng các phương thức alias, các thuộc tính `url`, `method`, và `data` đều không cần phải được chỉ định trong cấu hình.
