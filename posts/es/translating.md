@@ -2,14 +2,11 @@
 title: 'Traduciendo la documentación'
 ---
 
-Para hacer Axios accesible a tantas personas como posible, es importante que estos documentos puedan leerse en todos los idiomas. Siempre apreciamos a cualquiera que quiera
-ayudar a traducir la documentación. Esta guía provee instrucciones para agregar una traducción de esta documentación.
+Para hacer Axios accesible a tantas personas como posible, es importante que estos documentos puedan leerse en todos los idiomas. Siempre apreciamos a cualquiera que quiera ayudar a traducir la documentación. Esta guía provee instrucciones para agregar una traducción de esta documentación.
 
 ## Estructura
 
-Cada traduccion esta compuesta de un archivo de configuración, `{language-shortcut}.lang.js` (por ejemplo `en.lang.js` o `de.lang.js`) y 
-de archivos de documentacion traducidos en `posts/{language-shortcut}/*.md` (por ejemplo `posts/en` o `posts/de`). Debes reemplazar `{language-shortcut}` con el código de dos letras de tu idioma según [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1).
-
+Cada traduccion esta compuesta de un archivo de configuración, `{language-shortcut}.lang.js` (por ejemplo `en.lang.js` o `de.lang.js`) y de archivos de documentacion traducidos en `posts/{language-shortcut}/*.md` (por ejemplo `posts/en` o `posts/de`). Debes reemplazar `{language-shortcut}` con el código de dos letras de tu idioma según [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1).
 
 ## Configurando tu idioma
 
@@ -22,8 +19,7 @@ de archivos de documentacion traducidos en `posts/{language-shortcut}/*.md` (por
 
 ### Registrando la configuración
 
-Una vez que has finalizado de configurar tu idioma y traducido las frases y enlaces en el archivo de configuración, necesitaras registrarlo
-en la configuración principal. Para hacerlo, abre `inert.config.js` y agrega lo siguiente en la parte de arriba:
+Una vez que has finalizado de configurar tu idioma y traducido las frases y enlaces en el archivo de configuración, necesitaras registrarlo en la configuración principal. Para hacerlo, abre `inert.config.js` y agrega lo siguiente en la parte de arriba:
 
 ```js
 const {language-shortcut}Config = require('./{language-shortcut}.config.js');
