@@ -6,7 +6,7 @@ next_title: 'نکات'
 next_link: '/docs/notes'
 ---
 
-به صورت پیش فرض ، axios اشیاء JavaScript را به `JSON` تبدیل می کند. برای ارسال داده در قالب `application/x-www-form-urlencoded` ، می توانید از یکی از گزینه های زیر استفاده کنید.
+By default, axios serializes JavaScript objects to `JSON`. To send data in the `application/x-www-form-urlencoded` format instead, you can use one of the following options.
 
 ### مرورگر
 
@@ -72,7 +72,7 @@ axios.post('http://something.com/', params.toString());
 
 ```js
 const FormData = require('form-data');
- 
+
 const form = new FormData();
 form.append('my_field', 'my value');
 form.append('my_buffer', new Buffer(10));
