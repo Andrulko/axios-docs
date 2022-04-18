@@ -8,7 +8,7 @@ next_link: '/docs/post_example'
 ---
 
 ## نکته: استفاده از کد معمول
-برای استفاده از قابلیت های (intellisense / autocomplete) در TypeScript، حین استفاده از «require» به صورت زیر استفاده کنید: 
+برای استفاده از قابلیت های (intellisense / autocomplete) در TypeScript، حین استفاده از «require» به صورت زیر استفاده کنید:
 
 ```js
 const axios = require('axios').default;
@@ -18,26 +18,26 @@ const axios = require('axios').default;
 
 # مثال
 
-انجام درخواست `GET` 
+انجام درخواست `GET`
 
 ```js
 const axios = require('axios');
 
-// ایجاد درخواست برای یک کاربر با آی دی مشخص
+// Make a request for a user with a given ID
 axios.get('/user?ID=12345')
   .then(function (response) {
-    // مدیریت پاسخ در زمان موفق بودن درخواست
+    // handle success
     console.log(response);
   })
   .catch(function (error) {
-    // مدیریت خطا
+    // handle error
     console.log(error);
   })
   .then(function () {
-    // این قسمت همیشه اجرا می شود
+    // always executed
   });
 
-// درخواست بالا را به صورت زیر هم میتوان نوشت
+// Optionally the request above could also be done as
 axios.get('/user', {
     params: {
       ID: 12345
@@ -50,10 +50,10 @@ axios.get('/user', {
     console.log(error);
   })
   .then(function () {
-    // این قسمت همیشه اجرا می شود
+    // always executed
   });  
 
-// اگر میخواهید از async/await? استفاده کنید، کلمه `async` را در ابتدای تعریف تابع اضافه کنید.
+// Want to use async/await? Add the `async` keyword to your outer function/method.
 async function getUser() {
   try {
     const response = await axios.get('/user?ID=12345');
@@ -64,5 +64,4 @@ async function getUser() {
 }
 ```
 
-> **نکته:** `async/await` جزوی از روش ECMAScript 2017 است و در اینترنت اکسپلورر یا همان IE و مرورگرهای قدیمی پشتیبانی نمی شود.
-> پس با احتیاط لازم استفاده کنید.
+> **NOTE:** `async/await` is part of ECMAScript 2017 and is not supported in Internet Explorer and older browsers, so use with caution.
