@@ -7,12 +7,11 @@ prev_link: '/vi/docs/urlencoded'
 
 ## Semver
 
-Chừng nào chưa tới bản phát hành `1.0`, mỗi phiên bản thứ yếu mới mà được phát hành ra thì sẽ có thể có [breaking change](https://en.wiktionary.org/wiki/breaking_change). Ví dụ bản `0.5.1` và bản `0.5.4` thì sẽ có cùng API với nhau, nhưng bản `0.6.0` thì sẽ có thể có breaking change.
+Until axios reaches a `1.0` release, breaking changes will be released with a new minor version. For example `0.5.1`, and `0.5.4` will have the same API, but `0.6.0` will have breaking changes.
 
 ## Promise
 
-axios nhờ vào [Promise](http://caniuse.com/promises) trong ES6 thì mới chạy được.
-Nếu môi trường của bạn không hỗ trợ ES6 Promise, bạn có thể [polyfill](https://github.com/jakearchibald/es6-promise).
+axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises). If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise).
 
 ## TypeScript
 axios có kèm theo định nghĩa kiểu dữ liệu [TypeScript](http://typescriptlang.org).
@@ -31,7 +30,7 @@ axios.get('/user?ID=12345');
 
 ## Credits
 
-axios lấy cảm hứng sâu sắc từ dịch vụ [$http](https://docs.angularjs.org/api/ng/service/$http) được cung cấp trong [Angular](https://angularjs.org/). Suy cho cùng thì axios là một nỗ lực để cung cấp một dịch vụ standalone kiểu như `$http` cho như cầu sử dụng bên ngoài Angular.
+axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/ng/service/$http) provided in [Angular](https://angularjs.org/). Ultimately axios is an effort to provide a standalone `$http`-like service for use outside of Angular.
 
 ## Giấy phép
 
