@@ -12,12 +12,10 @@ Jede Übersetzung besteht aus einer Konfigurationsdatei `{language-shortcut}.lan
 
  - Kopieren Sie `en.lang.js`.
  - Bennen Sie die Datei um auf `{language-shortcut}.lang.js`.
- - Ersetzen Sie den Wert des Feldes `display` mit dem Namen ihrer Sprache, so wie sie in der Sprache gennant wird, also für Deutsch “Deutsch” und nicht “German”.
+ - Ersetzen Sie den Wert des Feldes `display` mit dem Namen ihrer Sprache, so wie sie in der Sprache gennant wird, also für Deutsch “Deutsch” und nicht “German”. For example, if you're translating german, place “Deutsch” instead of “German”.
  - Ersetzen Sie den Wert des Feldes `prefix` durch `/{language-shortcut}/`.
  - Übersetzen Sie die Werte in den feldern `p` und `t`.
- - Übersetzen Sie alle felder `text` im `sidebar`-Objekt.
-
-Seit neuestem müssen Sie die Links in der Sidebar nicht mehr ändern da der Präfix nun automatisch eingefügt wird.
+ - Übersetzen Sie alle felder `text` im `sidebar`-Objekt. **Note:** Since the latest version of this documentation, links in the sidebar no longer need to be updated.
 
 ### Die Konfiguration registrieren
 
@@ -34,12 +32,15 @@ Suchen Sie nun nach der Konstante `langs`. Befindet sich diese Über Ihrem `requ
 ```js
 const langs = [
   ...
+  const langs = [
+  ...
   {
     name: 'Some name that uniquely identifies your language, for example "English" or "German"',
     prefix: "The same prefix as in the configuration file",
     config: {language-shortcut}Config // The configuration object you imported earlier
   }
   ...
+];
 ];
 ```
 
