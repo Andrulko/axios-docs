@@ -32,7 +32,7 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 ### Konfigurationsreihenfolge
 
-Konfigurationswerte werden mit folgender Reihenfolge zusammengefügt: Zuerst die Standardwerte des Moduls ([`lib/defaults.js`](https://github.com/axios/axios/blob/master/lib/defaults.js#L28)), dann die der Instanz und am ende die der Anfrage. Jedes Element in der Reihenfolge überschreibt seinen Vorgänger. Hier sehen Sie ein Beispiel:
+Config will be merged with an order of precedence. Konfigurationswerte werden mit folgender Reihenfolge zusammengefügt: Zuerst die Standardwerte des Moduls ([`lib/defaults.js`](https://github.com/axios/axios/blob/master/lib/defaults.js#L28)), dann die der Instanz und am ende die der Anfrage. The latter will take precedence over the former. Hier sehen Sie ein Beispiel:
 
 ```js
 // Eine instanz mit den Standartwerten des moduls
@@ -40,12 +40,10 @@ Konfigurationswerte werden mit folgender Reihenfolge zusammengefügt: Zuerst die
 const instance = axios.create();
 
 // Die Modulstandartwerte werden nun überschrieben:
-// Alle Anfragen werden nun nach 2,5 Sekunden abgebrochen.
-instance.defaults.timeout = 2500;
+// Alle Anfragen werden nun nach 2,5 Sekunden abgebrochen. instance.defaults.timeout = 2500;
 
 // Jetzt werden auch die Instanzstanderwerte überschrieben:
-// Diese Anfrage wird 5 Sekunden warten bevor sie abbricht.
-instance.get('/longRequest', {
+// Diese Anfrage wird 5 Sekunden warten bevor sie abbricht. instance.get('/longRequest', {
   timeout: 5000
 });
 ```
