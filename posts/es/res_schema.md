@@ -17,7 +17,8 @@ La respuesta para una petición contiene la siguiente información.
   status: 200,
 
   // `statusText` es el mensaje del estado HTTP de la respuesta del servidor
-  statusText: 'OK',
+  statusText:
+  'OK',
 
   // `headers` las cabeceras HTTP con las que el servidor respondió
   // Todos los nombres de cabeceras son convertidos a minúsculas y pueden ser accedidos usando la notación de corchetes.
@@ -30,8 +31,6 @@ La respuesta para una petición contiene la siguiente información.
   // `request` es la petición que genera esta respuesta,
   // es la última instancia ClientRequest en node.js (en redirecciones)
   // y una instancia XMLHttpRequest en el navegador.
-  request: {}
-}
 ```
 
 Al usar `then`, recibirás la respuesta de la siguiente manera:
