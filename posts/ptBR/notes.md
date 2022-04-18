@@ -11,11 +11,10 @@ Até que o axios atinja a versão `1.0`, grandes mudanças serão lanças em uma
 
 ## Promessas
 
-O axios depende da implementação nativa do ES6 para ser [suportado](http://caniuse.com/promises).
-Se o seu ambiente não suporta o ES6 Promises, você pode utilizar o [polyfill](https://github.com/jakearchibald/es6-promise).
+O axios depende da implementação nativa do ES6 para ser [suportado](http://caniuse.com/promises). Se o seu ambiente não suporta o ES6 Promises, você pode utilizar o [polyfill](https://github.com/jakearchibald/es6-promise).
 
 ## TypeScript
-O axios inclue definições para o[TypeScript](http://typescriptlang.org)  
+O axios inclue definições para o[TypeScript](http://typescriptlang.org)
 ```typescript
 import axios from 'axios';
 axios.get('/user?ID=12345');
