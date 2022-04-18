@@ -11,8 +11,7 @@ prev_link: '/docs/urlencoded'
 
 ## Promises
 
-axios зависит от родной реализации ES6 Promise, [поддерживаемой браузером](http://caniuse.com/promises).
-Если ваша среда не поддерживает ES6 Promise, вы можете использовать [polyfill](https://github.com/jakearchibald/es6-promise).
+axios зависит от родной реализации ES6 Promise, [поддерживаемой браузером](http://caniuse.com/promises). Если ваша среда не поддерживает ES6 Promise, вы можете использовать [polyfill](https://github.com/jakearchibald/es6-promise).
 
 ## TypeScript
 axios включает [TypeScript](http://typescriptlang.org) типизацию.
