@@ -63,15 +63,16 @@ axios.post('http://something.com/', params.toString());
 
 Vous pouvez également utiliser la librairie [`qs`](https://github.com/ljharb/qs).
 
-> **Note :** la librairie `qs` est préférable si vous devez stringifier des objets imbriqués, car la méthode `querystring` est [connue pour causer des problèmes dans ce cas-là](https://github.com/nodejs/node-v0.x-archive/issues/1665).
+###### NOTE
+Avec node.js, vous pouvez utiliser la librairie [`form-data`](https://github.com/form-data/form-data) comme ceci :
 
 #### form-data
 
-Avec node.js, vous pouvez utiliser la librairie [`form-data`](https://github.com/form-data/form-data) comme ceci :
+Autrement, vous pouvez utiliser un intercepteur :
 
 ```js
 const FormData = require('form-data');
- 
+
 const form = new FormData();
 form.append('my_field', 'my value');
 form.append('my_buffer', new Buffer(10));
@@ -80,7 +81,7 @@ form.append('my_file', fs.createReadStream('/foo/bar.jpg'));
 axios.post('https://example.com', form, { headers: form.getHeaders() })
 ```
 
-Autrement, vous pouvez utiliser un intercepteur :
+Alternatively, use an interceptor:
 
 ```js
 axios.interceptors.request.use(config => {
