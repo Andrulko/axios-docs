@@ -21,6 +21,11 @@ The response for a request contains the following information.
 
   // `headers` заголовки HTTP-запроса, на которые ответил сервер
   // Все имена заголовков написаны в нижнем регистре, и к ним можно получить доступ, используя квадратные скобки.
+  // (HTTP/2 RFC: https://www.rfc-editor.org/rfc/rfc7540#section-8.1.2.4)
+  statusText: 'OK',
+
+  // `headers` the HTTP headers that the server responded with
+  // All header names are lower cased and can be accessed using the bracket notation.
   // Например: `response.headers['content-type']`
   headers: {},
 
@@ -29,8 +34,7 @@ The response for a request contains the following information.
 
   // `request` - это запрос, который сгенерировал этот ответ
   // Это последний экземпляр ClientRequest в node.js (в перенаправлениях)
-  // и экземпляр XMLHttpRequest в браузере.
-  request: {}
+  // и экземпляр XMLHttpRequest в браузере. request: {}
 }
 ```
 
