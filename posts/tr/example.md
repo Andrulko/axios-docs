@@ -1,6 +1,6 @@
 ---
 title: 'Basit Örnek'
-description: "Axios'u kullanımı için küçük bir örnek"
+description: 'Axios''u kullanımı için küçük bir örnek'
 prev_title: 'Intro'
 prev_link: '/docs/intro'
 next_title: 'POST İstekleri'
@@ -64,5 +64,4 @@ async function getUser() {
 }
 ```
 
-> **NOT:** "async/await", ECMAScript 2017'nin bir parçasıdır ve İnternet'te desteklenmez
-> Explorer ve daha eski tarayıcılar, bu nedenle dikkatli kullanın.
+> **NOT:** "async/await", ECMAScript 2017'nin bir parçasıdır ve İnternet'te desteklenmez Explorer ve daha eski tarayıcılar, bu nedenle dikkatli kullanın.
