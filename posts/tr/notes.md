@@ -11,8 +11,7 @@ Axios, bir '1.0' sürümüne ulaşana kadar, yeni bir küçük (minor) sürümle
 
 ## Promise
 
-axios, [desteklenecek](http://caniuse.com/promises) yerel bir ES6 Promise implementasyonudur.
-Ortamınız ES6 Promiselerini desteklemiyorsa [çoklu dolgulama (polyfill)](https://github.com/jakearchibald/es6-promise) yapabilirsiniz.
+axios, [desteklenecek](http://caniuse.com/promises) yerel bir ES6 Promise implementasyonudur. Ortamınız ES6 Promiselerini desteklemiyorsa [çoklu dolgulama (polyfill)](https://github.com/jakearchibald/es6-promise) yapabilirsiniz.
 
 ## TypeScript
 axios [TypeScript](http://typescriptlang.org) tanımları içerir.
