@@ -10,31 +10,33 @@ next_link: '/docs/config_defaults'
 
 ```js
 {
-  // `data` پاسخی است که توسط سرور ارائه شده است
+  // `data` is the response that was provided by the server
   data: {},
 
-  // `status` کد وضعیت HTTP از پاسخ سرور است
+  // `status` is the HTTP status code from the server response
   status: 200,
 
-  // `statusText` پیام وضعیت HTTP از پاسخ سرور است 
+  // `statusText` is the HTTP status message from the server response
+  // As of HTTP/2 status text is blank or unsupported.
+  // (HTTP/2 RFC: https://www.rfc-editor.org/rfc/rfc7540#section-8.1.2.4)
   statusText: 'OK',
 
-  // `headers` شامل هدرهایی است که سرور پاسخ داده است
-  // این هدرها حروف کوچک هستند و با استفاده از براکت می توان به آنها دسترسی پیدا کرد. 
-  // مثال: `response.headers['content-type']`
+  // `headers` the HTTP headers that the server responded with
+  // All header names are lower cased and can be accessed using the bracket notation.
+  // Example: `response.headers['content-type']`
   headers: {},
 
-  // `config` شامل تنظیماتی است که توسط `axios` برای درخواست ارائه شده است
+  // `config` is the config that was provided to `axios` for the request
   config: {},
 
-  // `request` همان درخواستی است که این پاسخ را ایجاد کرده است 
-  // در node.js آخرین نمونه از ClientRequest است
-  // و در مرورگر نمونه ای از XMLHttpRequest است
+  // `request` is the request that generated this response
+  // It is the last ClientRequest instance in node.js (in redirects)
+  // and an XMLHttpRequest instance in the browser
   request: {}
 }
 ```
 
-هنگام استفاده از "then"، پاسخ را به شرح زیر دریافت خواهید کرد: 
+هنگام استفاده از "then"، پاسخ را به شرح زیر دریافت خواهید کرد:
 
 ```js
 axios.get('/user/12345')
