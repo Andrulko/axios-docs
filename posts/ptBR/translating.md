@@ -15,7 +15,7 @@ Toda tradução é composta por um arquivo de configuração, `{language-shortcu
  - Substitua `display` com o nome do seu idioma, no formato do seu idioma. Por exemplo, se você estiver traduzindo alemão, coloque “Deutsch” ao invés de “German”.
  - Substitua o prefixo com `/{language-shortcut}/`.
  - Traduza os valores dos campos `p` e `t`.
- - Traduza todas as propriedades `text` na sidebar. **Nota:** Desde a última versão deste documento, links na sidebar não precisam ser 
+ - Traduza todas as propriedades `text` na sidebar. **Nota:** Desde a última versão deste documento, links na sidebar não precisam ser
 
 ### Registrando a configuração
 
@@ -41,6 +41,6 @@ const langs = [
 ];
 ```
 
-Agora você pode começa a traduzir os arquivos, copie a pasta `posts/en` em uma nova pasta `posts/{language-shortcut}` e traduza todos os arquivos. (não traduza o nome dos arquivos, é claro).
+Now, you can begin translating the files. Agora você pode começa a traduzir os arquivos, copie a pasta `posts/en` em uma nova pasta `posts/{language-shortcut}` e traduza todos os arquivos. (não traduza o nome dos arquivos, é claro).
 
 Caso você tenha algum problema durante o percurso de tradução, sinta-se livre em [criar uma issue](https://github.com/axios/axios-docs/issues/new/choose).
