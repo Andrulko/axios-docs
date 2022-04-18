@@ -10,29 +10,22 @@ La réponse d’une requête comporte les informations suivantes.
 
 ```js
 {
-  // `data` est le contenu de la réponse renvoyée par le serveur.
-  data: {},
+  // `data` est le contenu de la réponse renvoyée par le serveur. data: {},
 
-  // `status` est le code HTTP de la réponse.
-  status: 200,
+  // `status` est le code HTTP de la réponse. status: 200,
 
   // `statusText` est le message de statut HTTP de la réponse.
   statusText: 'OK',
 
-  // `headers` sont les headers HTTP associés à la réponse.
-  // Tous les noms de headers sont en minuscules et peuvent être récupérés en
+  // `headers` sont les headers HTTP associés à la réponse. // Tous les noms de headers sont en minuscules et peuvent être récupérés en
   // utilisant les crochets.
-  // Par exemple : `response.headers['content-type']`.
-  headers: {},
+  // Par exemple : `response.headers['content-type']`. headers: {},
 
-  // `config` est la configuration de requête qui a été fournie à Axios.
-  config: {},
+  // `config` est la configuration de requête qui a été fournie à Axios. config: {},
 
-  // `request` est la requête qui a engendré cette réponse.
-  // Il s’agit de la dernière instance de ClientRequest avec node.js (il peut y
+  // `request` est la requête qui a engendré cette réponse. // Il s’agit de la dernière instance de ClientRequest avec node.js (il peut y
   // avoir des redirections) et d’une instance de XMLHttpRequest avec le
-  // navigateur.
-  request: {}
+  // navigateur. request: {}
 }
 ```
 
