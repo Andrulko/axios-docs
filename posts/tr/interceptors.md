@@ -20,12 +20,10 @@ axios.interceptors.request.use(function (config) {
 
 // İstek için yol kesici ekle
 axios.interceptors.response.use(function (response) {
-    // 2xx aralığında bulunan herhangi bir durum kodu, bu işlevin tetiklenmesine neden olur.
-    // Yanıttaki veri ile bir şey yap
+    // 2xx aralığında bulunan herhangi bir durum kodu, bu işlevin tetiklenmesine neden olur. // Yanıttaki veri ile bir şey yap
     return response;
   }, function (error) {
-    // 2xx aralığının dışında kalan herhangi bir durum kodu, bu işlevin tetiklenmesine neden olur.
-    // Yanıttaki hata ile bir şey yap
+    // 2xx aralığının dışında kalan herhangi bir durum kodu, bu işlevin tetiklenmesine neden olur. // Yanıttaki hata ile bir şey yap
     return Promise.reject(error);
   });
 ```
