@@ -24,7 +24,7 @@ controller.abort()
 
 ## CancelToken `déprécié`
 
-Vous pouvez aussi annuler une requête à l’aide d’un *CancelToken* (jeton d’annulation). 
+Vous pouvez aussi annuler une requête à l’aide d’un *CancelToken* (jeton d’annulation).
 
 > L’API des jetons d’annulation d’Axios est basée sur la [proposition permettant d’annuler des promesses](https://github.com/tc39/proposal-cancelable-promises) qui a depuis été retirée.
 
