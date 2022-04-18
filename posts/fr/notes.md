@@ -11,8 +11,7 @@ En attendant qu’Axios arrive à sa version `1.0`, les changements non-rétroco
 
 ## Promesses
 
-Axios a besoin d’une implémentation native des promesses ES6 pour être [supporté](http://caniuse.com/promises).
-Si votre environnement ne supporte pas les promesses ES6, vous pouvez utiliser un [polyfill](https://github.com/jakearchibald/es6-promise).
+Axios a besoin d’une implémentation native des promesses ES6 pour être [supporté](http://caniuse.com/promises). Si votre environnement ne supporte pas les promesses ES6, vous pouvez utiliser un [polyfill](https://github.com/jakearchibald/es6-promise).
 
 ## TypeScript
 Axios inclut des définitions de types [TypeScript](http://typescriptlang.org).
@@ -35,4 +34,4 @@ Axios est fortement inspiré du [service `$http`](https://docs.angularjs.org/api
 
 ## Licence
 
-Axios est sous [licence MIT](https://github.com/axios/axios/blob/master/LICENSE).
+[MIT](https://github.com/axios/axios/blob/master/LICENSE)
