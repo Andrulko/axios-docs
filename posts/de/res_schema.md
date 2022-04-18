@@ -27,7 +27,8 @@ Die Antwort auf eine Anfrage enthält folgende informationen:
   // `config` Die konfiguration die in der anfrage angegeben wurde
   config: {},
 
-  // `request` Die Anfrage die diese Antwort generiert hat. Auf
+  // `request` Die Anfrage die diese Antwort generiert hat.
+  Auf
   // Node.js ein ClientRequest, im Browser eine Instanz von
   // XMLHttpRequest
   request: {}
