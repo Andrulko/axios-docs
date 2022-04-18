@@ -24,7 +24,7 @@ controller.abort()
 
 ## CancelToken `устарел`
 
-Вы также можете отменить запрос, используя *CancelToken*. 
+Вы также можете отменить запрос, используя *CancelToken*.
 
 > API токена отмены axios основан на отозванном [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises).
 
