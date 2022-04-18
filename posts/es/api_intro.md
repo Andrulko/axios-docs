@@ -53,7 +53,6 @@ Por conveniencia los alias han sido proveídos para todos los métodos de petici
 ##### axios.options(url[, config])
 ##### axios.post(url[, data[, config]])
 ##### axios.put(url[, data[, config]])
-
 ##### axios.patch(url[, data[, config]])
 
 ###### NOTA
