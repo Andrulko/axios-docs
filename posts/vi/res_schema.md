@@ -10,26 +10,28 @@ Response của một request thì chứa những thông tin sau.
 
 ```js
 {
-  // `data` là response do server trả về
+  // `data` is the response that was provided by the server
   data: {},
 
-  // `status` là mã trạng thái HTTP từ hồi đáp của server
+  // `status` is the HTTP status code from the server response
   status: 200,
 
-  // `statusText` là thông điệp trạng thái HTTP từ hồi đáp của server
+  // `statusText` is the HTTP status message from the server response
+  // As of HTTP/2 status text is blank or unsupported.
+  // (HTTP/2 RFC: https://www.rfc-editor.org/rfc/rfc7540#section-8.1.2.4)
   statusText: 'OK',
 
-  // `headers` là những header HTTP do server trả về cùng
-  // Tất cả tên header đều dùng chữ thường và có thể được truy cập bằng ký pháp dấu ngoặc vuông.
-  // Ví dụ: `response.headers['content-type']`
+  // `headers` the HTTP headers that the server responded with
+  // All header names are lower cased and can be accessed using the bracket notation.
+  // Example: `response.headers['content-type']`
   headers: {},
 
-  // `config` là cấu hình được cung cấp tới axios cho request tương ứng
+  // `config` is the config that was provided to `axios` for the request
   config: {},
 
-  // `request` là request mà đã gây nên response này
-  // Trong node.js thì đây chính là instance ClientRequest cuối cùng (trong chuyển hướng)
-  // còn trong trình duyệt thì đây là instance XMLHttpRequest cuối cùng
+  // `request` is the request that generated this response
+  // It is the last ClientRequest instance in node.js (in redirects)
+  // and an XMLHttpRequest instance in the browser
   request: {}
 }
 ```
