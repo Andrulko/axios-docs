@@ -23,21 +23,21 @@ Phát đi một `GET` request
 ```js
 const axios = require('axios');
 
-// Tạo một request để truy xuất người dùng ứng với ID cho sẵn:
+// Make a request for a user with a given ID
 axios.get('/user?ID=12345')
   .then(function (response) {
-    // xử trí khi thành công
+    // handle success
     console.log(response);
   })
   .catch(function (error) {
-    // xử trí khi bị lỗi
+    // handle error
     console.log(error);
   })
   .then(function () {
-    // luôn luôn được thực thi
+    // always executed
   });
 
-// Cái request bên trên cũng có thể được làm bằng cách sau, tùy ý
+// Optionally the request above could also be done as
 axios.get('/user', {
     params: {
       ID: 12345
@@ -50,10 +50,10 @@ axios.get('/user', {
     console.log(error);
   })
   .then(function () {
-    // luôn luôn được thực thi
+    // always executed
   });  
 
-// Nếu muốn sử dụng async/await thì viết như sau
+// Want to use async/await? Add the `async` keyword to your outer function/method.
 async function getUser() {
   try {
     const response = await axios.get('/user?ID=12345');
