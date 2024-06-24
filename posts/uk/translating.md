@@ -2,24 +2,24 @@
 title: 'Переклад документації'
 ---
 
-Щоб зробити Axios доступним для якомога більшої кількості людей, важливо, щоб ці документи можна було читати усіма мовами. Ми завжди цінуємо кожного, хто хоче допомогти перекласти документацію. Цей посібник містить інструкції щодо додавання перекладу до цієї документації.
+To make Axios accessible to as many people as possible, it is important that these docs can be read in all languages. We always appreciate anyone who wants to help translate the documentation. This guide provides instructions for adding a translation to this documentation.
 
 ## Структура
 
-Кожен переклад складається з файлу конфігурації `{language-shortcut .lang.js` (наприклад,` en.lang.js` або `de.lang.js`) та перекладених файлів документації у` posts/{language-shortcut}/*.md` (наприклад, `post/en` або `post/де`). `{language-shortcut}` слід замінити дволітерним кодом вашої мови [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1).
+Every translation is composed of a configuration file, `{language-shortcut}.lang.js` (for example, `en.lang.js` or `de.lang.js`) and the translated documentation files in `posts/{language-shortcut}/*.md` (for example `posts/en` or `posts/de`). `{language-shortcut}` should be replaced with your language's [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) two-letter code.
 
 ## Налаштування вашої мови
 
  - Скопіюйте `en.lang.js`.
  - Перейменуйте його на `{language-shortcut}.lang.js`.
- - Замініть `display` назвою вашої мови вашою мовою. Наприклад, якщо ви перекладаєте німецькою мовою, замість “німецької” поставте “Deutsch”.
+ - Replace `display` with the name of your language, in your language. For example, if you're translating german, place “Deutsch” instead of “German”.
  - Замініть префікс на `/{language-shortcut}/`.
  - Перекладіть значення в поля `p` і `t`.
- - Перекладіть усі властивості з позначкою `text` на бічній панелі. **Примітка:** Починаючи з останньої версії цієї документації, посилання на бічній панелі більше не потребують оновлення.
+ - Translate all the properties labeled `text` in the sidebar. **Note:** Since the latest version of this documentation, links in the sidebar no longer need to be updated.
 
 ### Реєстрація конфігурації
 
-Після того, як ви завершите налаштування мови та перекладете фрази та посилання у файлі конфігурації, вам потрібно буде зареєструвати його у кореневій конфігурації. Для цього відкрийте `inert.config.js` і додайте такий рядок зверху:
+Once you've finished configuring your language and translating the phrases and links in the configuration file, you'll need to register it in the root configuration. To do this, open `inert.config.js` and add the following line near the top:
 
 ```js
 const {language-shortcut}Config = require('./{language-shortcut}.config.js');
@@ -27,7 +27,7 @@ const {language-shortcut}Config = require('./{language-shortcut}.config.js');
 
 Звичайно, не забудьте замінити `{language-shortcut}` правильним кодом [ISO 369-1](https://en.wikipedia.org/wiki/ISO_639-1) (також у назві змінної!).
 
-Тепер шукайте константу `langs`. Якщо ця константа знаходиться над вашим оператором `require`, перемістіть його над ним. До списку `langs` додайте такий об’єкт:
+Now, look for the `langs` constant. If this constant is located above your `require` statement, move your `require` statement above it. To the `langs` list, add the following object:
 
 ```js
 const langs = [
@@ -41,6 +41,6 @@ const langs = [
 ];
 ```
 
-Тепер ви можете розпочати переклад файлів. Скопіюйте папку `posts/en` в нову папку `posts/{language-shortcut} `і перекладіть усі файли (звичайно, не перекладайте назви файлів).
+Now, you can begin translating the files. Copy the folder `posts/en` into a new folder `posts/{language-shortcut}` and translate all the files (don't translate the filenames, of course).
 
 Якщо у вас виникли проблеми, не соромтеся [створити issue](https://github.com/axios/axios-docs/issues/new/choose).

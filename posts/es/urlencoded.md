@@ -57,7 +57,7 @@ O ['URLSearchParams'](https://nodejs.org/api/url.html#url_class_urlsearchparams)
 
 ```js
 const url = require('url');
-const params = new url.URLSearchParams({ foo: 'bar' });
+const params = new url. URLSearchParams({ foo: 'bar' });
 axios.post('http://something.com/', params.toString());
 ```
 
@@ -72,7 +72,7 @@ En node.js, puedes usar la librería [`form-data`](https://github.com/form-data/
 
 ```js
 const FormData = require('form-data');
- 
+
 const form = new FormData();
 form.append('my_field', 'my value');
 form.append('my_buffer', new Buffer(10));

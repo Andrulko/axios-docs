@@ -7,7 +7,7 @@ next_link: '/zh/docs/res_schema'
 ---
 
 
-这些是创建请求时可以用的配置选项。只有 `url` 是必需的。如果没有指定 `method`，请求将默认使用 `GET` 方法。
+这些是创建请求时可以用的配置选项。 只有 `url` 是必需的。 如果没有指定 `method`，请求将默认使用 `GET` 方法。
 
 ```js
 {
@@ -18,6 +18,8 @@ next_link: '/zh/docs/res_schema'
   method: 'get', // 默认值
 
   // `baseURL` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
+  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs
+  // to methods of that instance.
   // 它可以通过设置一个 `baseURL` 便于为 axios 实例的方法传递相对 URL
   baseURL: 'https://some-domain.com/api/',
 
@@ -62,13 +64,40 @@ next_link: '/zh/docs/res_schema'
   data: {
     firstName: 'Fred'
   },
-  
+
   // 发送请求体数据的可选语法
   // 请求方式 post
   // 只有 value 会被发送，key 则不会
   data: 'Country=Brasil&City=Belo Horizonte',
 
   // `timeout` 指定请求超时的毫秒数。
+  params: {
+    ID: 12345
+  },
+
+  // `paramsSerializer` is an optional function in charge of serializing `params`
+  // (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)
+  paramsSerializer: function (params) {
+    return Qs.stringify(params, {arrayFormat: 'brackets'})
+  },
+
+  // `data` is the data to be sent as the request body
+  // Only applicable for request methods 'PUT', 'POST', 'DELETE', and 'PATCH'
+  // When no `transformRequest` is set, must be of one of the following types:
+  // - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams
+  // - Browser only: FormData, File, Blob
+  // - Node only: Stream, Buffer
+  data: {
+    firstName: 'Fred'
+  },
+
+  // syntax alternative to send data into the body
+  // method post
+  // only the value is sent, not the key
+  data: 'Country=Brasil&City=Belo Horizonte',
+
+  // `timeout` specifies the number of milliseconds before the request times out.
+  // If the request takes longer than `timeout`, the request will be aborted.
   // 如果请求时间超过 `timeout` 的值，则请求会被中断
   timeout: 1000, // 默认值是 `0` (永不超时)
 
@@ -77,6 +106,15 @@ next_link: '/zh/docs/res_schema'
 
   // `adapter` 允许自定义处理请求，这使测试更加容易。
   // 返回一个 promise 并提供一个有效的响应 （参见 lib/adapters/README.md）。
+  adapter: function (config) {
+    /* ... */
+  },
+
+  // `auth` indicates that HTTP Basic auth should be used, and supplies credentials.
+  // This will set an `Authorization` header, overwriting any existing
+  // `Authorization` custom headers you have set using `headers`.
+  // Please note that only HTTP Basic auth is configurable through this parameter.
+  // For Bearer tokens and such, use `Authorization` custom headers instead.
   adapter: function (config) {
     /* ... */
   },
@@ -121,14 +159,14 @@ next_link: '/zh/docs/res_schema'
   // `maxBodyLength`（仅Node）定义允许的http请求内容的最大字节数
   maxBodyLength: 2000,
 
-  // `validateStatus` 定义了对于给定的 HTTP状态码是 resolve 还是 reject promise。
-  // 如果 `validateStatus` 返回 `true` (或者设置为 `null` 或 `undefined`)，
+  // `validateStatus` 定义了对于给定的 HTTP状态码是 resolve 还是 reject promise。 // 如果 `validateStatus` 返回 `true` (或者设置为 `null` 或 `undefined`)，
   // 则promise 将会 resolved，否则是 rejected。
   validateStatus: function (status) {
     return status >= 200 && status < 300; // 默认值
   },
 
   // `maxRedirects` 定义了在node.js中要遵循的最大重定向数。
+  // If set to 0, no redirects will be followed.
   // 如果设置为0，则不会进行重定向
   maxRedirects: 5, // 默认值
 
@@ -144,11 +182,19 @@ next_link: '/zh/docs/res_schema'
   httpAgent: new http.Agent({ keepAlive: true }),
   httpsAgent: new https.Agent({ keepAlive: true }),
 
-  // `proxy` 定义了代理服务器的主机名，端口和协议。
-  // 您可以使用常规的`http_proxy` 和 `https_proxy` 环境变量。
+  // `proxy` 定义了代理服务器的主机名，端口和协议。 This allows options to be added like
+  // `keepAlive` that are not enabled by default.
+  httpAgent: new http.Agent({ keepAlive: true }),
+  httpsAgent: new https.Agent({ keepAlive: true }),
+
+  // `proxy` defines the hostname, port, and protocol of the proxy server.
+  // 您可以使用常规的`http_proxy` 和 `https_proxy` 环境变量。 If you are using environment variables
+  // for your proxy configuration, you can also define a `no_proxy` environment
+  // variable as a comma-separated list of domains that should not be proxied.
   // 使用 `false` 可以禁用代理功能，同时环境变量也会被忽略。
   // `auth`表示应使用HTTP Basic auth连接到代理，并且提供凭据。
   // 这将设置一个 `Proxy-Authorization` 请求头，它会覆盖 `headers` 中已存在的自定义 `Proxy-Authorization` 请求头。
+  // If the proxy server uses HTTPS, then you must set the protocol to `https`. 
   // 如果代理服务器使用 HTTPS，则必须设置 protocol 为`https`
   proxy: {
     protocol: 'https',
@@ -169,6 +215,11 @@ next_link: '/zh/docs/res_schema'
   // from the responses objects of all decompressed responses
   // - Node only (XHR cannot turn off decompression)
   decompress: true // 默认值
+
+} If set to `true` will also remove the 'content-encoding' header 
+  // from the responses objects of all decompressed responses
+  // - Node only (XHR cannot turn off decompression)
+  decompress: true // default
 
 }
 ```

@@ -7,12 +7,11 @@ prev_link: '/docs/urlencoded'
 
 ## ورژن دهی
 
-تا زمان رسیدن ورژن axios به نسخه `1.0`، تغییرات ساختاری با یک شماره ورژن به اصطلاح minor ارائه میشود. برای مثال ورژن `0.5.1` و `0.5.4` از توابع API یکسان استفاده میکنند. اما ورژن `0.6.0` تغییراتی ساختاری دارد.
+Until axios reaches a `1.0` release, breaking changes will be released with a new minor version. For example `0.5.1`, and `0.5.4` will have the same API, but `0.6.0` will have breaking changes.
 
 ## Promise ها
 
-axios به پیاده سازی بومی Promise  در ES6 بستگی دارد تا [پشتیبانی شود](http://caniuse.com/promises).
-اگر محیط شما از Promise های در ES6 پشتیبانی نمی کند، می توانید از [polyfill](https://github.com/jakearchibald/es6-promise) استفاده کنید.
+axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises). If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise).
 
 ## TypeScript
 axios شامل تعاریف [TypeScript](http://typescriptlang.org) می شود.
@@ -31,7 +30,7 @@ axios.get('/user?ID=12345');
 
 ## Credits
 
-axios بشدت از [سرویس $http](https://docs.angularjs.org/api/ng/service/$http) ارائه شده در [Angular](https://angularjs.org/) الهام گرفته شده است. در نهایت axios تلاشی، برای ارائه خدمات مستقل `$http` برای استفاده خارج از Angular است. 
+axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/ng/service/$http) provided in [Angular](https://angularjs.org/). Ultimately axios is an effort to provide a standalone `$http`-like service for use outside of Angular.
 
 ## مجوز استفاده
 

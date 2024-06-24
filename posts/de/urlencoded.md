@@ -72,7 +72,7 @@ In Node.js funktioniert auch das Module [`form-data`](https://github.com/form-da
 
 ```js
 const FormData = require('form-data');
- 
+
 const form = new FormData();
 form.append('my_field', 'my value');
 form.append('my_buffer', new Buffer(10));

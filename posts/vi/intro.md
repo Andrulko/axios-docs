@@ -6,7 +6,7 @@ next_link: '/vi/docs/example'
 ---
 
 # Axios là gì?
-Axios là một thư viện HTTP Client dựa trên *[Promise](https://javascript.info/promise-basics)* dành cho [`node.js`](https://nodejs.org) và trình duyệt. Nó có tính *[đẳng hình](https://www.lullabot.com/articles/what-is-an-isomorphic-application)* (tức là cùng codebase có thể chạy trong cả trình duyệt và node.js). Ở phía server thì nó sử dụng native module `http` trong node.js, còn ở phía client (trình duyệt) thì nó sử dụng XMLHttpRequest.
+Axios is a *[promise-based](https://javascript.info/promise-basics)* HTTP Client for [`node.js`](https://nodejs.org) and the browser. It is *[isomorphic](https://www.lullabot.com/articles/what-is-an-isomorphic-application)* (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js `http` module, while on the client (browser) it uses XMLHttpRequests.
 
 # Tính năng
 

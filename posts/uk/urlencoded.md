@@ -6,7 +6,7 @@ next_title: 'Замітки'
 next_link: '/uk/docs/notes'
 ---
 
-За замовчуванням axios серіалізує об’єкти JavaScript у `JSON`. Натомість для надсилання даних у форматі `application/x-www-form-urlencoded` можна скористатися одним із наведених нижче варіантів.
+By default, axios serializes JavaScript objects to `JSON`. To send data in the `application/x-www-form-urlencoded` format instead, you can use one of the following options.
 
 ### Браузер
 
@@ -72,7 +72,7 @@ axios.post('http://something.com/', params.toString());
 
 ```js
 const FormData = require('form-data');
- 
+
 const form = new FormData();
 form.append('my_field', 'my value');
 form.append('my_buffer', new Buffer(10));

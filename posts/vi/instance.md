@@ -22,7 +22,7 @@ const instance = axios.create({
 
 ### Phương thức instance
 
-Các phương thức instance sẵn có đều được liệt kê dưới đây. Cấu hình được chỉ định thì sẽ được hợp chung với cấu hình instance.
+The available instance methods are listed below. The specified config will be merged with the instance config.
 
 ##### axios#request(config)
 ##### axios#get(url[, config])

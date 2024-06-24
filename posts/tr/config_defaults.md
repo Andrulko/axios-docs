@@ -35,8 +35,6 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 Konfigürasyon öncelik sırasına göre birleştirilecektir. Sıra, [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28) içinde bulunan kütüphane varsayılanlarıdır, ardından objenin `defaults` özelliğidir ve son olarak istek için `config` argümanı. İkincisi, birincisine göre öncelikli olacaktır. İşte bir örnek:
 
 ```js
-// Kütüphane tarafından sağlanan yapılandırma varsayılanlarını kullanarak bir örnek oluşturun
-// Bu noktada, zaman aşımı yapılandırma değeri, kütüphane için varsayılan değer olan `0`dır.
 const instance = axios.create();
 
 // Kütüphane için zaman aşımı varsayılanını geçersiz kıl

@@ -6,7 +6,7 @@ next_link: '/uk/docs/example'
 ---
 
 # Що таке Axios?
-Axios-це клієнт HTTP на основі *[Promise](https://javascript.info/promise-basics)* для [`node.js`](https://nodejs.org) та браузера. Він *[ізоморфний](https://www.lullabot.com/articles/what-is-an-isomorphic-application)* (= він може працювати у браузері та nodejs з тією ж базою кодів). На стороні сервера він використовує рідний `http`-модуль node.js, тоді як на клієнті (браузер) він використовує `XMLHttpRequests`.
+Axios is a *[promise-based](https://javascript.info/promise-basics)* HTTP Client for [`node.js`](https://nodejs.org) and the browser. It is *[isomorphic](https://www.lullabot.com/articles/what-is-an-isomorphic-application)* (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js `http` module, while on the client (browser) it uses XMLHttpRequests.
 
 # Переваги
 

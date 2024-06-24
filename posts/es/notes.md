@@ -11,8 +11,7 @@ Hasta que axios alcance una version `1.0`, cambios significativos seran liberado
 
 ## Promesas
 
-Axios depende de una impletación nativa de las Promesas de ES6[verificar soporte](http://caniuse.com/promises).
-Si tu ambiente no soporta las Promesas de ES6, puedes usar [polyfill](https://github.com/jakearchibald/es6-promise).
+Axios depende de una impletación nativa de las Promesas de ES6[verificar soporte](http://caniuse.com/promises). Si tu ambiente no soporta las Promesas de ES6, puedes usar [polyfill](https://github.com/jakearchibald/es6-promise).
 
 ## TypeScript
 axios incluye definiciones [TypeScript](http://typescriptlang.org).

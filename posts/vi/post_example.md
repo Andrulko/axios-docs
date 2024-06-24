@@ -23,6 +23,7 @@ axios.post('/user', {
 ```
 
 Phát đi nhiều request đồng hành
+
 ```js
 function getUserAccount() {
   return axios.get('/user/12345');

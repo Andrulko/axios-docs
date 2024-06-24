@@ -19,15 +19,10 @@ Bunlar, istek yapmak için mevcut konfigürasyon seçenekleridir. Yalnızca `url
 
   // `url` mutlak olmadığı sürece `baseURL`, `url`nin başına eklenecektir.
   // Bir axios örneğine göreli URL'leri o örneğin yöntemlerine iletmek için "baseURL" ayarlamak uygun olabilir..
-
-  // `baseURL`, `url` mutlak (tam bir url) olmadığı sürece `url`ye eklenecektir
-  // Bir axios objesiyle ilgili URL'leri o objenin yöntemlerine iletmesi için `baseURL`
-  // ayarlamak uygun olabilir.
   baseURL: 'https://some-domain.com/api',
 
   // `transformRequest` sunucuya gönderilmeden önce istek verilerinde değişikliklere izin verir
-  // Bu yalnızca 'PUT', 'POST', 'PATCH' ve 'DELETE' istek metotları için geçerlidir.
-  // Dizideki son fonksiyon bir string veya bir Buffer, ArrayBuffer, FormData veya Stream objesi döndürmelidir
+  // Bu yalnızca 'PUT', 'POST', 'PATCH' ve 'DELETE' istek metotları için geçerlidir. // Dizideki son fonksiyon bir string veya bir Buffer, ArrayBuffer, FormData veya Stream objesi döndürmelidir
   // `headers` nesnesini değiştirebilirsiniz.
   transformRequest: [function (data, headers) {
     //Verileri dönüştürmek için bir şey yap
@@ -84,6 +79,7 @@ Bunlar, istek yapmak için mevcut konfigürasyon seçenekleridir. Yalnızca `url
 
   // `adapter` isteklerin özel olarak işlenmesine izin verir, bu testleri kolaylaştırır
   // Promise döndürün ve geçerli bir yanıt belirtin (bkz lib/adapters/README.md).
+  // Return a promise and supply a valid response (see lib/adapters/README.md).
   adapter: function (config) {
     /* ... */
   },
@@ -143,30 +139,30 @@ Bunlar, istek yapmak için mevcut konfigürasyon seçenekleridir. Yalnızca `url
 
   // `maxRedirects` node.js için takip edilecek maksimum yönlendirme sayısını belirler
   // 0 olarak ayarlanırsa, hiçbir yönlendirme takip edilmez.
-  maxRedirects: 5, // varsayılan
+  // If set to 0, no redirects will be followed.
+  maxRedirects: 5, // default
 
-  // `socketPath` node.js'de kullanılacak UNIX socket'ini belirler
-  // örneğin istekleri docker daemon'una göndermek için: '/var/run/docker.sock'
-  // Sadece, `socketPath` veya `proxy` seçeneklerinden biri belirlenebilir.
+  // `socketPath` defines a UNIX Socket to be used in node.js.
+  // e.g. '/var/run/docker.sock' to send requests to the docker daemon.
+  // Only either `socketPath` or `proxy` can be specified.
   // İkisi de belirlenmiş ise, `socketPath` kullanılır.
   socketPath: null, // varsayılan
 
   // `httpAgent` ve `httpsAgent`, Node.js'de sırasıyla http ve https istekleri
   // gerçekleştirirken kullanılacak user agenti tanımlar. Bu, varsayılan olarak
-  // etkin olmayan 'keepAlive' gibi seçeneklerin eklenmesine izin verir.  
+  // etkin olmayan 'keepAlive' gibi seçeneklerin eklenmesine izin verir.
   httpAgent: new http.Agent({ keepAlive: true }),
   httpsAgent: new https.Agent({ keepAlive: true }),
 
   // `proxy` proxy sunucusunun ana bilgisayar adını, bağlantı noktasını ve protokolünü tanımlar.
-  // Proxy'nizi `http_proxy` ve `https_proxy` ortam değişkenlerini kullanarak da tanımlayabilirsiniz.
-  // Eğer proxy konfigürasyonunuz için ortam değişkenleri kullanıyor iseniz, ek olarak virgül ile
+  // Proxy'nizi `http_proxy` ve `https_proxy` ortam değişkenlerini kullanarak da tanımlayabilirsiniz. // Eğer proxy konfigürasyonunuz için ortam değişkenleri kullanıyor iseniz, ek olarak virgül ile
   // ayrılmış şekilde proxy kullanılmayacak alan adlarını `no_proxy` ortam değişkeninde belirleyebilirsiniz.
   // Proxy kullanımını devre dışı bırakmak için `false` değerini kullanın. Bu ortam değişkenlerini yok sayar.
-  // `auth`, HTTP temel erişim kimlik doğrulaması (Basic auth) bu proxy'e bağlanmak için gerektiğini veya
-  // gerekmediğini belirtir, ve kimlik bilgilerini sağlar.
-  // Bu aynı zamanda, herhangi mevcut özel olarak belirlediğiniz `Proxy-Authorization` değerini de yok sayacak
-  // olan `Proxy-Authorization` üstbilgisini ekler.
-  // Eğer proxy sunucusu HTTPS kullanıyor ise, protocol `https` olmalıdır.
+  // `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and
+  // supplies credentials.
+  // This will set an `Proxy-Authorization` header, overwriting any existing
+  // `Proxy-Authorization` custom headers you have set using `headers`.
+  // Eğer proxy sunucusu HTTPS kullanıyor ise, protocol `https` olmalıdır. 
   proxy: {
     protocol: 'https',
     host: '127.0.0.1',
@@ -184,8 +180,7 @@ Bunlar, istek yapmak için mevcut konfigürasyon seçenekleridir. Yalnızca `url
 
   // 'decompress', yanıt gövdesinin sıkıştırılmasının otomatik olarak açılıp açılmamasını
   // belirler. Eğer `true` olarak belirlenir ise ek olarak tüm sıkıştırılması açılan objelerin
-  // 'content-encoding' üstbilgisini yanıtlarından kaldıracaktır.
-  // - Sadece Node.js (XHR sıkıştırılmanın açılmasını kapatamıyor)
+  // 'content-encoding' üstbilgisini yanıtlarından kaldıracaktır. // - Sadece Node.js (XHR sıkıştırılmanın açılmasını kapatamıyor)
   decompress: true // varsayılan
 
 }

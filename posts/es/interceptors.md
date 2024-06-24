@@ -6,7 +6,7 @@ next_title: 'Manejando Errores'
 next_link: '/es/docs/handling_errors'
 ---
 
-Puedes interceptar peticiones o respuestas antes que sean manipulados por `then` o `catch`. 
+Puedes interceptar peticiones o respuestas antes que sean manipulados por `then` o `catch`.
 
 ```js
 // Agregar un interceptor a la petición

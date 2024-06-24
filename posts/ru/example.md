@@ -7,7 +7,7 @@ next_title: 'POST запросы'
 next_link: '/docs/post_example'
 ---
 
-## note: использование CommonJS 
+## note: использование CommonJS
 Чтобы получить типизацию TypeScript (для intellisense / автозаполнения) при импользовании импорта CommonJS с `require()` используйте следующий подход:
 
 ```js
@@ -64,5 +64,4 @@ async function getUser() {
 }
 ```
 
-> **Примечание:** `async/await` является частью ECMAScript 2017 и не поддерживается в Internet
-> Explorer и более старых браузерах, поэтому используйте их осторожностью.
+> **Примечание:** `async/await` является частью ECMAScript 2017 и не поддерживается в Internet Explorer и более старых браузерах, поэтому используйте их осторожностью.

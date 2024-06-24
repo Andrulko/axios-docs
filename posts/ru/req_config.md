@@ -46,6 +46,26 @@ next_link: '/docs/res_schema'
   // `params` - это URL-параметры, которые отправляются вместе с запросом
   // Должно быть обычным объектом или объектом URLSearchParams
   // Примечание: параметры, которые являются нулевыми или неопределенными, не отображаются в URL-адресе.
+  transformRequest: [function (data, headers) {
+    // Do whatever you want to transform the data
+
+    return data;
+  }],
+
+  // `transformResponse` allows changes to the response data to be made before
+  // it is passed to then/catch
+  transformResponse: [function (data) {
+    // Do whatever you want to transform the data
+
+    return data;
+  }],
+
+  // `headers` are custom headers to be sent
+  headers: {'X-Requested-With': 'XMLHttpRequest'},
+
+  // `params` are the URL parameters to be sent with the request
+  // Must be a plain object or a URLSearchParams object
+  // NOTE: params that are null or undefined are not rendered in the URL.
   params: {
     ID: 12345
   },
@@ -65,7 +85,7 @@ next_link: '/docs/res_schema'
   data: {
     firstName: 'Fred'
   },
-  
+
   // альтернатива синтаксису для передачи данных в тело
   // POST-метода
   // отправляется только значение, а не ключ
@@ -125,11 +145,7 @@ next_link: '/docs/res_schema'
   // `maxContentLength` определяет максимальный размер содержимого ответа http в байтах, разрешенный в node.js
   maxContentLength: 2000,
 
-  // `maxBodyLength` (Только для Node.js) определяет максимальный разрешенный размер содержимого HTTP-запроса в байтах.
-  maxBodyLength: 2000,
-
-  // `validateStatus` определяет, разрешить или отклонить Promise для данного
-  // статуса HTTP-запроса. Если `validateStatus` возвращает `true` (или установлено значение `null`
+  // `maxBodyLength` (Только для Node.js) определяет максимальный разрешенный размер содержимого HTTP-запроса в байтах. Если `validateStatus` возвращает `true` (или установлено значение `null`
   // или `undefined`), Promise будет возвращен; иначе, Promise будет отклонен.
   validateStatus: function (status) {
     return status >= 200 && status < 300; // по умолчанию
@@ -147,7 +163,8 @@ next_link: '/docs/res_schema'
 
   // `httpAgent` и `httpsAgent` определяют пользовательский агент, который будет использоваться при выполнении http
   // и https запросов, соответственно в node.js.Это позволяет добавлять такие параметры, как
-  // `keepAlive` который не включен по умолчанию.
+  // `keepAlive` который не включен по умолчанию. This allows options to be added like
+  // `keepAlive` that are not enabled by default.
   httpAgent: new http.Agent({ keepAlive: true }),
   httpsAgent: new https.Agent({ keepAlive: true }),
 
@@ -159,7 +176,7 @@ next_link: '/docs/res_schema'
   // `auth` указывает, что для подключения к прокси-серверу следует использовать базовую аутентификацию HTTP, и предоставляет учетные данные.
   // Это установит заголовок `Proxy-Authorization`, перезаписав любой существующий
   // `Proxy-Authorization` пользовательский заголовок, который вы установили в `headers`.
-  // Если прокси-сервер использует HTTPS, вы должны установить протокол `https`.
+  // Если прокси-сервер использует HTTPS, вы должны установить протокол `https`. 
   proxy: {
     protocol: 'https',
     host: '127.0.0.1',
@@ -176,8 +193,7 @@ next_link: '/docs/res_schema'
   }),
 
   // `decompress` указывает, следует ли распаковывать тело ответа
-  // автоматически. Если установлено значение `true`, также удалит заголовок 'content-encoding' из объектов ответов всех распакованных ответов.
-  // - Только для Node.js (XHR не может отключить декомпрессию)
+  // автоматически. Если установлено значение `true`, также удалит заголовок 'content-encoding' из объектов ответов всех распакованных ответов. // - Только для Node.js (XHR не может отключить декомпрессию)
   decompress: true // по умолчанию
 
 }

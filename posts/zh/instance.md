@@ -22,7 +22,7 @@ const instance = axios.create({
 
 ### 实例方法
 
-以下是可用的实例方法。指定的配置将与实例的配置合并。
+以下是可用的实例方法。 指定的配置将与实例的配置合并。
 
 ##### axios#request(config)
 ##### axios#get(url[, config])

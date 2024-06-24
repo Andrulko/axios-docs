@@ -22,7 +22,7 @@ const instance = axios.create({
 
 ### Методи екземплярів
 
-Нижче перераховані доступні методи екземплярів. Зазначена конфігурація буде об’єднана з конфігурацією екземпляра.
+The available instance methods are listed below. The specified config will be merged with the instance config.
 
 ##### axios#request(config)
 ##### axios#get(url[, config])

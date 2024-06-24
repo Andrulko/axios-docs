@@ -23,21 +23,21 @@ const axios = require('axios').default;
 ```js
 const axios = require('axios');
 
-// Робимо запит для користувача з даним ID
+// Make a request for a user with a given ID
 axios.get('/user?ID=12345')
   .then(function (response) {
-    // обробка успішного запиту
+    // handle success
     console.log(response);
   })
   .catch(function (error) {
-    // обробка помилки
+    // handle error
     console.log(error);
   })
   .then(function () {
-    // виконується завжди
+    // always executed
   });
 
-// За бажанням вищевказаний запит також можна виконати так
+// Optionally the request above could also be done as
 axios.get('/user', {
     params: {
       ID: 12345
@@ -50,10 +50,10 @@ axios.get('/user', {
     console.log(error);
   })
   .then(function () {
-    // виконується завжди
+    // always executed
   });  
 
-// Хочете використовувати async/await? Додайте ключове слово `async` до своєї зовнішньої функції/методу.
+// Want to use async/await? Add the `async` keyword to your outer function/method.
 async function getUser() {
   try {
     const response = await axios.get('/user?ID=12345');
@@ -64,5 +64,4 @@ async function getUser() {
 }
 ```
 
-> ** ПРИМІТКА: ** `async/await` є частиною ECMAScript 2017 і не підтримується в Інтернеті
-> Explorer та старіші веб -переглядачі, тому використовуйте їх з обережністю.
+> ** ПРИМІТКА: ** `async/await` є частиною ECMAScript 2017 і не підтримується в Інтернеті Explorer та старіші веб -переглядачі, тому використовуйте їх з обережністю.

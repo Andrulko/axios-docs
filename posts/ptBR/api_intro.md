@@ -1,10 +1,10 @@
 ---
-title: "Axios API"
-description: "A referência de API do Axios"
-prev_title: "Requisições POST"
-prev_link: "/ptBR/docs/post_example"
-next_title: "Instância Axios"
-next_link: "/ptBR/docs/instance"
+title: 'Axios API'
+description: 'A referência de API do Axios'
+prev_title: 'Requisições POST'
+prev_link: '/ptBR/docs/post_example'
+next_title: 'Instância Axios'
+next_link: '/ptBR/docs/instance'
 ---
 
 Requisições podem ser feitas passando as configuraçãos relevantes para o `axios`.
@@ -57,4 +57,4 @@ Por conveniência, foram fornecidos pseudônimos para todos os métodos de solic
 ##### axios.patch(url[, data[, config]])
 
 ###### INFO
-Ao usar os pseudônimo dos métodos, as propriedades `url`,` method` e `data` não precisam ser especificadas na configuração.
+Ao usar os pseudônimo dos métodos, as propriedades `url`,`method` e `data` não precisam ser especificadas na configuração.

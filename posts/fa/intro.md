@@ -6,7 +6,7 @@ next_link: '/docs/example'
 ---
 
 # Axios چیست؟
-Axios یک سرویس گیرنده *[promise-based](https://javascript.info/promise-basics)* برای [`node.js`](https://nodejs.org) و مرورگر است.  همچنین یک *[isomorphic](https://www.lullabot.com/articles/what-is-an-isomorphic-application)* است. (= می‌تواند با کدی یکسان هم در مرورگر و هم در nodejs اجرا شود).  در سمت سرور از کد ماژول بومی `http` node.js استفاده میکند در حالی که سمت مرورگر از XMLHttpRequests استفاده میکند.
+Axios is a *[promise-based](https://javascript.info/promise-basics)* HTTP Client for [`node.js`](https://nodejs.org) and the browser. It is *[isomorphic](https://www.lullabot.com/articles/what-is-an-isomorphic-application)* (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js `http` module, while on the client (browser) it uses XMLHttpRequests.
 
 # ویژگی ها
 

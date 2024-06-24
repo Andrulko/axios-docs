@@ -8,7 +8,7 @@ next_link: '/docs/interceptors'
 
 ## تنظیمات پیش فرض
 
-می توانید پیش فرض های پیکربندی را که برای هر درخواست اعمال می شود ، مشخص کنید. 
+می توانید پیش فرض های پیکربندی را که برای هر درخواست اعمال می شود ، مشخص کنید.
 
 ### پیش فرض های سراسری axios
 
@@ -18,7 +18,7 @@ axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 ```
 
-### پیش فرض برای نمونه سازی سفارشی 
+### پیش فرض برای نمونه سازی سفارشی
 
 ```js
 // هنگام ایجاد نمونه سازی، پیش فرض های پیکربندی را تنظیم کنید 
@@ -30,9 +30,9 @@ const instance = axios.create({
 instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 ```
 
-### پیکربندی ترتیب اولویت ها 
+### پیکربندی ترتیب اولویت ها
 
-پیکربندی با ترتیب اولویت ها ادغام می شود. این ترتیب ها از این کتابخانه آورده شده اند: [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), در مثال زیر سپس ویژگی "defaults" از نمونه، و در آخر پارامتر ورودی "config" مقدار دهی شده اند. پارامتر دومی اولویت بیشتری دارد.
+Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
 
 ```js
 // با استفاده از تنظیمات پیش فرض پیکربندی ارائه شده توسط کتابخانه ، یک نمونه ایجاد کنید 

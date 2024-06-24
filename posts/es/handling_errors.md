@@ -18,7 +18,7 @@ axios.get('/user/12345')
     } else if (error.request) {
       // La petición fue hecha pero no se recibió respuesta
       // `error.request` es una instancia de XMLHttpRequest en el navegador y una instancia de
-      // http.ClientRequest en node.js
+      // http. ClientRequest en node.js
       console.log(error.request);
     } else {
       // Algo paso al preparar la petición que lanzo un Error

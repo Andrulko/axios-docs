@@ -1,9 +1,10 @@
 ---
 title: 'Axios-API'
-prev_title: 'POST-Anfragen'
-prev_link: '/de/docs/post_example'
-next_title: 'Die Axios-Instanz'
-next_link: '/de/docs/instance'
+description: 'POST-Anfragen'
+prev_title: '/de/docs/post_example'
+prev_link: 'Die Axios-Instanz'
+next_title: '/de/docs/instance'
+next_link: '/docs/instance'
 ---
 
 Anfragen können alternativ mit der Methode `axios` ausgeführt werden:

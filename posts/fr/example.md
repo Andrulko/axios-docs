@@ -23,8 +23,7 @@ Faire une requête `GET`
 ```js
 const axios = require('axios');
 
-// Requêter un utilisateur avec un ID donné.
-axios.get('/user?ID=12345')
+// Requêter un utilisateur avec un ID donné. axios.get('/user?ID=12345')
   .then(function (response) {
     // en cas de réussite de la requête
     console.log(response);

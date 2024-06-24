@@ -53,7 +53,7 @@ axios.get('/user', {
     // siempre sera ejecutado
   });  
 
-// ¿Quieres usar async/await? Añade la palabra reservada `async` a tu función/método externo.
+// ¿Quieres usar async/await? Añade la palabra reservada `async` a tu función/método externo. Add the `async` keyword to your outer function/method.
 async function getUser() {
   try {
     const response = await axios.get('/user?ID=12345');
@@ -64,5 +64,4 @@ async function getUser() {
 }
 ```
 
-> **NOTA:** `async/await` es parte de ECMAScript 2017 y no es soportado por Internet
-> Explorer y otros navegadores antiguos, a si que usalo con cuidado.
+> **NOTA:** `async/await` es parte de ECMAScript 2017 y no es soportado por Internet Explorer y otros navegadores antiguos, a si que usalo con cuidado.

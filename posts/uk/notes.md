@@ -7,15 +7,13 @@ prev_link: '/uk/docs/urlencoded'
 
 ## Semver
 
-Поки axios не досягне версії `1.0`, останні зміни будуть випущені з новою другою версією. Наприклад, `0.5.1` та `0.5.4` матимуть однаковий API, але `0.6.0` матиме останні зміни.
+Until axios reaches a `1.0` release, breaking changes will be released with a new minor version. For example `0.5.1`, and `0.5.4` will have the same API, but `0.6.0` will have breaking changes.
 
 ## Promises
 
-axios залежить від рідної реалізації ES6 Promise, що [підтримується браузером](http://caniuse.com/promises).
-Якщо ваше середовище не підтримує Promise ES6, ви можете використати [поліфіл](https://github.com/jakearchibald/es6-promise).
+axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises). If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise).
 
 ## TypeScript
-
 axios містить визначення [TypeScript](http://typescriptlang.org).
 ```typescript
 import axios from 'axios';
@@ -32,7 +30,7 @@ axios.get('/user?ID=12345');
 
 ## Credits
 
-axios надихається [$http service](https://docs.angularjs.org/api/ng/service/$http), яка надається в [Angular](https://angularjs.org/). Зрештою axios-це спроба надати окрему послугу, подібну до $http, для використання за межами Angular.
+axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/ng/service/$http) provided in [Angular](https://angularjs.org/). Ultimately axios is an effort to provide a standalone `$http`-like service for use outside of Angular.
 
 ## Ліцензія
 

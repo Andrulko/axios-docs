@@ -22,7 +22,7 @@ const instance = axios.create({
 
 ### توابه این نمونه
 
-توابع مربوط به نمونه ساخته شده در زیر ذکر شده است. پیکربندی مشخص شده با پیکربندی پیش فرض نمونه ادغام می شود. 
+The available instance methods are listed below. The specified config will be merged with the instance config.
 
 ##### axios#request(config)
 ##### axios#get(url[, config])

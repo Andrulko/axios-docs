@@ -20,6 +20,9 @@ axios.get('/foo/bar', {
 });
 // 取消请求
 controller.abort()
+});
+// cancel the request
+controller.abort()
 ```
 
 ## CancelToken `deprecated`

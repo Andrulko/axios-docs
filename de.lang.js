@@ -1,128 +1,141 @@
 /**
- * Configuration for the german translation
+ * Configuration for the english (original) translation
  */
-
 module.exports = {
-  display: "Deutsch",
-  prefix: "/de/",
+  // Language display name. MUST BE THE SAME AS IN [inert.config.js].custom.langs
+  display: 'Deutsch',
+  prefix: '/de/',
+  dir: 'ltr',
+  lang: 'en',
+  // `p` stands for `paragraph`. This will contain translations of full text blocks
   p: {
-    headline: "Promise-basierter HTTP-Client für den Browser und Node.js",
+    headline: 'Promise-basierter HTTP-Client für den Browser und Node.js',
     subhead: `Axios ist ein einfacher Promise-basierter HTTP-Client für den Browser und Node.js.
               Axios stellt in einem kompakten Paket ein einfach zu verwendendes und erweiterbares
-              Interface zur verfügung.`,
+              Interface zur verfügung.`
   },
+  // `t` stands fot `translation`. This will contain translations of single words or phrases
   t: {
-    "Get Started": "Loslegen",
-    "View on GitHub": "Quellcode auf GitHub",
-    "Languages": "Sprachen",
-    "Open Source": "Open-Source",
-    "Contribute": "Mitwirken",
-    "Source on GitHub": "Quellcode auf GitHub",
-    "Fork on GitHub": "Eine eigene version abspalten",
-    "Fork the Website": "Die website abspalten",
-    "Create an Issue": "Ein issue erstellen"
+    'Get Started': undefined,
+    'View on GitHub': undefined,
+    'Languages': undefined,
+    'Open Source': undefined,
+    'Contribute': undefined,
+    'Source on GitHub': undefined,
+    'Issues': undefined,
+    'Pull Requests': undefined,
+    'Code of Conduct': undefined,
+    'Fork on GitHub': undefined,
+    'Fork the Website': undefined,
+    'Create an Issue': undefined,
+    'Next': undefined,
+    'Previous': undefined,
+    'Website Copy Right Footer': undefined,
+    'View On Github': undefined,
+    'Axios Project Copy Right Footer': undefined,
+    'License Label Footer': undefined
   },
   sidebar: [
     {
-      type: "heading",
-      text: "Loslegen mit Axios",
+      type: 'heading',
+      text: 'Loslegen mit Axios'
     },
     {
-      type: "link",
-      href: "/docs/intro",
-      text: "Einführung",
+      type: 'link',
+      href: '/docs/intro',
+      text: 'Einführung'
     },
     {
-      type: "link",
-      href: "/docs/example",
-      text: "Beispiel",
+      type: 'link',
+      href: '/docs/example',
+      text: 'Beispiel'
     },
     {
-      type: "link",
-      href: "/docs/post_example",
-      text: "POST-Anfragen",
+      type: 'link',
+      href: '/docs/post_example',
+      text: 'POST-Anfragen'
     },
     {
-      type: "heading",
-      text: "Axios-API",
+      type: 'heading',
+      text: 'Axios-API'
     },
     {
-      type: "link",
-      href: "/docs/api_intro",
-      text: "Axios-API",
+      type: 'link',
+      href: '/docs/api_intro',
+      text: 'Axios-API'
     },
     {
-      type: "link",
-      href: "/docs/instance",
-      text: "Die Axios-Instanz",
+      type: 'link',
+      href: '/docs/instance',
+      text: 'Die Axios-Instanz'
     },
     {
-      type: "link",
-      href: "/docs/req_config",
-      text: "Anfragenkonfigurationsschema",
+      type: 'link',
+      href: '/docs/req_config',
+      text: 'Anfragenkonfigurationsschema'
     },
     {
-      type: "link",
-      href: "/docs/res_schema",
-      text: "Antwortenschema",
+      type: 'link',
+      href: '/docs/res_schema',
+      text: 'Antwortenschema'
     },
     {
-      type: "link",
-      href: "/docs/config_defaults",
-      text: "Konfigurationsstandardwerte",
+      type: 'link',
+      href: '/docs/config_defaults',
+      text: 'Konfigurationsstandardwerte'
     },
     {
-      type: "link",
-      href: "/docs/interceptors",
-      text: "Abfänger",
+      type: 'link',
+      href: '/docs/interceptors',
+      text: 'Abfänger'
     },
     {
-      type: "link",
-      href: "/docs/handling_errors",
-      text: "Errorverarbeitung",
+      type: 'link',
+      href: '/docs/handling_errors',
+      text: 'Errorverarbeitung'
     },
     {
-      type: "link",
-      href: "/docs/cancellation",
-      text: "Anfragen abbrechen",
+      type: 'link',
+      href: '/docs/cancellation',
+      text: 'Anfragen abbrechen'
     },
     {
-      type: "link",
-      href: "/docs/urlencoded",
-      text: "URL-Ähnlich Kodierte Anfragenkörper",
+      type: 'link',
+      href: '/docs/urlencoded',
+      text: 'URL-Ähnlich Kodierte Anfragenkörper'
     },
     {
-      type: "heading",
-      text: "Andere",
+      type: 'heading',
+      text: 'Andere'
     },
     {
-      type: "link",
-      href: "/docs/notes",
-      text: "Weitere Notizen",
+      type: 'link',
+      href: '/docs/notes',
+      text: 'Weitere Notizen'
     },
     {
-      type: "heading",
-      text: "Mitwirken",
+      type: 'heading',
+      text: 'Mitwirken'
     },
     {
-      type: "link",
-      href: "https://github.com/axios/axios/blob/master/CODE_OF_CONDUCT.md",
-      text: "Code of Conduct",
+      type: 'link',
+      href: 'https://github.com/axios/axios/blob/master/CODE_OF_CONDUCT.md',
+      text: 'Code of Conduct'
     },
     {
-      type: "link",
-      href: "https://github.com/axios/axios/blob/master/COLLABORATOR_GUIDE.md",
-      text: "Leitfaden",
+      type: 'link',
+      href: 'https://github.com/axios/axios/blob/master/COLLABORATOR_GUIDE.md',
+      text: 'Leitfaden'
     },
     {
-      type: "link",
-      href: "https://github.com/axios/axios/blob/master/CONTRIBUTING.md",
-      text: "Mitwirken"
+      type: 'link',
+      href: 'https://github.com/axios/axios/blob/master/CONTRIBUTING.md',
+      text: 'Mitwirken'
     },
     {
-      type: "link",
-      href: "/docs/translating",
-      text: "Übersetzungen Hinzufügen"
+      type: 'link',
+      href: '/docs/translating',
+      text: 'Übersetzungen Hinzufügen'
     }
-  ],
+  ]
 };

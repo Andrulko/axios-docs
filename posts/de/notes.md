@@ -1,7 +1,8 @@
 ---
 title: 'Notes'
-prev_title: 'URL-Ähnlich Kodierte Anfragenkörper'
-prev_link: '/de/docs/urlencoded'
+description: 'URL-Ähnlich Kodierte Anfragenkörper'
+prev_title: '/de/docs/urlencoded'
+prev_link: '/docs/urlencoded'
 ---
 
 ## Semver
@@ -10,8 +11,7 @@ Bis Axios eine Version `1.0` erreicht, können breaking changes auch in minor-ve
 
 ## Promises
 
-Axios benötigt das die Promise-API [unterstützt wird](http://caniuse.com/promises).
-Falls ihre Umgebung dieser Vorraussetzung nicht nachkommt können sie diesen [Polyfill](https://github.com/jakearchibald/es6-promise) verwenden.
+Axios benötigt das die Promise-API [unterstützt wird](http://caniuse.com/promises). Falls ihre Umgebung dieser Vorraussetzung nicht nachkommt können sie diesen [Polyfill](https://github.com/jakearchibald/es6-promise) verwenden.
 
 ## TypeScript
 Axios beinhaltet [TypeScript](http://typescriptlang.org)-Definitionen.

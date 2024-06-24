@@ -2,8 +2,8 @@
 title: 'Dokümentasyonu çevirmek'
 ---
 
-Axios'u mümkün olduğunca çok kişi için erişilebilir kılmak için bu dokümentasyonların tüm dillerde okunabilmesi önemlidir. İsteyen herkese her zaman minnettarız
-belgelerin çevrilmesine yardımcı olmak için. Bu kılavuz, dokümentasyonları nasıl dilinize çevirebileceğiniz ile ilgili yönergeler bulunduruyor.
+Axios'u mümkün olduğunca çok kişi için erişilebilir kılmak için bu dokümentasyonların tüm dillerde okunabilmesi önemlidir. İsteyen herkese her zaman minnettarız belgelerin çevrilmesine yardımcı olmak için. Bu kılavuz, dokümentasyonları nasıl dilinize çevirebileceğiniz ile ilgili yönergeler bulunduruyor.
+
 ## Yapı
 
 Her çeviri bir konfigürasyon `{dil-kısayolu}.lang.js` adında bir konfigürasyon dosyasından (örneğin: `en.lang.js`, `de.lang.js`) ve `posts/{language-shortcut}/*.md`de bulunan çevrilmiş dokümentasyon dosyalarından oluşur (örneğin: `posts/en`, `posts/de`). "{dil-kısayolu}", dilinizin [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) iki harfli koduyla değiştirilmelidir.
